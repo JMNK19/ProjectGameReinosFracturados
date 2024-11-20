@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dc5jtbhghdn71"]
+[gd_scene load_steps=25 format=3 uid="uid://dc5jtbhghdn71"]
 
 [ext_resource type="Texture2D" uid="uid://du1s1w1nf28n0" path="res://Assets/Sprites_Capsula/Capsula Criatura01.png" id="1_7kxod"]
 
@@ -157,9 +157,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_843xu"]
+size = Vector2(64, 128)
+
 [node name="Capsula" type="StaticBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_smt5m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_843xu")
