@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://du1s1w1nf28n0"
-path="res://.godot/imported/Capsula Criatura01.png-9406b33a17ae76d1b2d8c88dadd56974.ctex"
+path="res://.godot/imported/Capsula Criatura01.png-aefbdabe011355c0ad6bd8bd76a07086.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites_Capsula/Capsula Criatura01.png"
-dest_files=["res://.godot/imported/Capsula Criatura01.png-9406b33a17ae76d1b2d8c88dadd56974.ctex"]
+source_file="res://assets/Sprites_Capsula/Capsula Criatura01.png"
+dest_files=["res://.godot/imported/Capsula Criatura01.png-aefbdabe011355c0ad6bd8bd76a07086.ctex"]
 
 [params]
 
