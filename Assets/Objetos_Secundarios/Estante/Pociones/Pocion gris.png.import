@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4pyv7x8avxxc"
-path="res://.godot/imported/Pocion gris.png-7a7a21ed512a2218636931d37e54e384.ctex"
+path="res://.godot/imported/Pocion gris.png-b3e0f45621eae4a3a691c80f104dfbb7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Objetos_Secundarios/Estante/Pociones/Pocion gris.png"
-dest_files=["res://.godot/imported/Pocion gris.png-7a7a21ed512a2218636931d37e54e384.ctex"]
+source_file="res://assets/objetos_secundarios/Estante/Pociones/Pocion gris.png"
+dest_files=["res://.godot/imported/Pocion gris.png-b3e0f45621eae4a3a691c80f104dfbb7.ctex"]
 
 [params]
 
