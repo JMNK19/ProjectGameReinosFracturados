@@ -10,5 +10,4 @@ motion_mirroring = Vector2(1158.4, 0)
 [node name="FondoLab" type="Sprite2D" parent="ParallaxLayer"]
 texture_filter = 1
 position = Vector2(582, 329)
-scale = Vector2(9.05, 9.05)
 texture = ExtResource("1_2urht")
