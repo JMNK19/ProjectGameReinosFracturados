@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2yyilylsb85d"]
+
+[ext_resource type="Texture2D" uid="uid://dh2cf88evbdw2" path="res://Assets/backgrounds/fondoLab.png" id="1_2urht"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1158.4, 0)
+
+[node name="FondoLab" type="Sprite2D" parent="ParallaxLayer"]
+texture_filter = 1
+position = Vector2(582, 329)
+texture = ExtResource("1_2urht")
