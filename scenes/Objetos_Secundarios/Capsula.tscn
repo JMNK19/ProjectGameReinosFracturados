@@ -1,9 +1,9 @@
 [gd_scene load_steps=71 format=3 uid="uid://dc5jtbhghdn71"]
 
-[ext_resource type="Texture2D" uid="uid://du1s1w1nf28n0" path="res://Assets/Sprites_Capsula/Capsula Criatura01.png" id="1_7kxod"]
-[ext_resource type="Texture2D" uid="uid://ckoj6l2xi4uyp" path="res://Assets/Sprites_Capsula/Capsula Criatura02.png" id="2_uwip5"]
-[ext_resource type="Texture2D" uid="uid://c0yyljatddjnr" path="res://Assets/Sprites_Capsula/Capsula Criatura03.png" id="3_g5tp0"]
-[ext_resource type="Texture2D" uid="uid://cu0h4dyadpxlb" path="res://Assets/Sprites_Capsula/Capsula_vacia.png" id="4_kgq2l"]
+[ext_resource type="Texture2D" uid="uid://du1s1w1nf28n0" path="res://assets/Sprites_Capsula/Capsula Criatura01.png" id="1_7kxod"]
+[ext_resource type="Texture2D" uid="uid://ckoj6l2xi4uyp" path="res://assets/Sprites_Capsula/Capsula Criatura02.png" id="2_uwip5"]
+[ext_resource type="Texture2D" uid="uid://c0yyljatddjnr" path="res://assets/Sprites_Capsula/Capsula Criatura03.png" id="3_g5tp0"]
+[ext_resource type="Texture2D" uid="uid://cu0h4dyadpxlb" path="res://assets/Sprites_Capsula/Capsula_vacia.png" id="4_kgq2l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ngltq"]
 atlas = ExtResource("1_7kxod")
@@ -483,7 +483,8 @@ size = Vector2(64, 128)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_smt5m")
-animation = &"vacio"
+animation = &"criatura02"
+frame_progress = 0.842399
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_843xu")

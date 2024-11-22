@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dh2cf88evbdw2"
-path="res://.godot/imported/fondoLab.png-2db2b6b3c0723f091645d129253852d8.ctex"
+path="res://.godot/imported/fondoLab.png-1be7bc0682a8c749e21eecdeed5ae300.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/backgrounds/fondoLab.png"
-dest_files=["res://.godot/imported/fondoLab.png-2db2b6b3c0723f091645d129253852d8.ctex"]
+source_file="res://assets/backgrounds/fondoLab.png"
+dest_files=["res://.godot/imported/fondoLab.png-1be7bc0682a8c749e21eecdeed5ae300.ctex"]
 
 [params]
 

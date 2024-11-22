@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu0h4dyadpxlb"
-path="res://.godot/imported/Capsula_vacia.png-0ccf3c13953cc9da368a70ac2cba6860.ctex"
+uid="uid://bpo4rqtglv3r0"
+path="res://.godot/imported/Cientifico.png-add4e072107234dcd5f6e97a062dd5a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites_Capsula/Capsula_vacia.png"
-dest_files=["res://.godot/imported/Capsula_vacia.png-0ccf3c13953cc9da368a70ac2cba6860.ctex"]
+source_file="res://assets/cientifico/Cientifico.png"
+dest_files=["res://.godot/imported/Cientifico.png-add4e072107234dcd5f6e97a062dd5a3.ctex"]
 
 [params]
 
