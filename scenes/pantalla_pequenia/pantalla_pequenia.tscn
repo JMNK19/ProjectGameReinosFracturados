@@ -1,0 +1,93 @@
+[gd_scene load_steps=14 format=3 uid="uid://bshap8akqrwav"]
+
+[ext_resource type="Texture2D" uid="uid://igw4knjp1mwg" path="res://assets/Objetos_Secundarios/Pantalla pequeña/Pantalla pequeña.png" id="1_24w56"]
+[ext_resource type="Script" path="res://scenes/pantalla_pequenia/pantalla_pequenia.gd" id="2_hidf0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fm1iq"]
+atlas = ExtResource("1_24w56")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlxv2"]
+atlas = ExtResource("1_24w56")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8cur"]
+atlas = ExtResource("1_24w56")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrnn8"]
+atlas = ExtResource("1_24w56")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pungt"]
+atlas = ExtResource("1_24w56")
+region = Rect2(256, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86yrp"]
+atlas = ExtResource("1_24w56")
+region = Rect2(320, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uviu"]
+atlas = ExtResource("1_24w56")
+region = Rect2(384, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8t2w"]
+atlas = ExtResource("1_24w56")
+region = Rect2(448, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ug4l"]
+atlas = ExtResource("1_24w56")
+region = Rect2(512, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lfww"]
+atlas = ExtResource("1_24w56")
+region = Rect2(576, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_458sx"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fm1iq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlxv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8cur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrnn8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pungt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86yrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uviu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8t2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ug4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lfww")
+}],
+"loop": true,
+"name": &"estadisticas",
+"speed": 6.0
+}]
+
+[node name="pantalla_pequenia" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_458sx")
+animation = &"estadisticas"
+frame_progress = 0.627333
+script = ExtResource("2_hidf0")

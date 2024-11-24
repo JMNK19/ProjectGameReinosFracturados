@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhmxaj218er54"
-path="res://.godot/imported/Panel extra.png-5d8107b919af4f72f41b2dd48705fcba.ctex"
+uid="uid://brj1yoyisjtfw"
+path="res://.godot/imported/cientifico64x64_jump.png-51231d5eb2daad90d5933ba0c082cbce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Objetos_Secundarios/Panel/Panel extra.png"
-dest_files=["res://.godot/imported/Panel extra.png-5d8107b919af4f72f41b2dd48705fcba.ctex"]
+source_file="res://assets/cientifico/cientifico64x64_jump.png"
+dest_files=["res://.godot/imported/cientifico64x64_jump.png-51231d5eb2daad90d5933ba0c082cbce.ctex"]
 
 [params]
 
