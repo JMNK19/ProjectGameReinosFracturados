@@ -1,14 +1,14 @@
 [gd_scene load_steps=13 format=3 uid="uid://d2yyilylsb85d"]
 
 [ext_resource type="Texture2D" uid="uid://du6sjywm7e3ey" path="res://assets/backgrounds/fondoLab.png" id="1_jx10p"]
-[ext_resource type="Texture2D" uid="uid://dpo3mro1woqr3" path="res://assets/backgrounds/fondoLab_patrones.png" id="2_h5r8s"]
-[ext_resource type="Texture2D" uid="uid://b7vjkwq70mvt8" path="res://assets/tilesets/tile_suelo.png" id="2_lwkc8"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/fondoLab_patrones.png" id="2_h5r8s"]
+[ext_resource type="Texture2D" path="res://assets/tilesets/tile_suelo.png" id="2_lwkc8"]
 [ext_resource type="PackedScene" uid="uid://cd7q7toq8bjmp" path="res://scenes/characters/main_character/main_character.tscn" id="3_sv86j"]
 [ext_resource type="PackedScene" uid="uid://bshap8akqrwav" path="res://scenes/pantalla_pequenia/pantalla_pequenia.tscn" id="4_dmga0"]
 [ext_resource type="PackedScene" uid="uid://8rbt5lmdrp0s" path="res://scenes/camera/camera.tscn" id="4_tx36t"]
 [ext_resource type="Texture2D" uid="uid://b2m6ne541cxn" path="res://assets/Objetos_Secundarios/Mesa/Mesa laboratorio.png" id="5_78aar"]
 [ext_resource type="PackedScene" uid="uid://c706c21im3p8v" path="res://scenes/pantalla_grande/pantalla_grande.tscn" id="5_va3hj"]
-[ext_resource type="Texture2D" uid="uid://uxuogl2mrfci" path="res://assets/Objetos_Secundarios/Estante/Estante.png" id="8_s85y8"]
+[ext_resource type="Texture2D" path="res://assets/Objetos_Secundarios/Estante/Estante.png" id="8_s85y8"]
 [ext_resource type="PackedScene" uid="uid://dc5jtbhghdn71" path="res://scenes/capsula/Capsula.tscn" id="9_6rtje"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pjjtp"]
