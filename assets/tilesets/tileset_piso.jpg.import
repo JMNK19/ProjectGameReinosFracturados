@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh2cf88evbdw2"
-path="res://.godot/imported/fondoLab.png-1be7bc0682a8c749e21eecdeed5ae300.ctex"
+uid="uid://dik84ng4mf1r8"
+path="res://.godot/imported/tileset_piso.jpg-9a12d2a49d4df5eaf86a7f84b8e93f5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/fondoLab.png"
-dest_files=["res://.godot/imported/fondoLab.png-1be7bc0682a8c749e21eecdeed5ae300.ctex"]
+source_file="res://assets/tilesets/tileset_piso.jpg"
+dest_files=["res://.godot/imported/tileset_piso.jpg-9a12d2a49d4df5eaf86a7f84b8e93f5e.ctex"]
 
 [params]
 
