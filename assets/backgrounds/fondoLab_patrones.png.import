@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du6sjywm7e3ey"
-path="res://.godot/imported/fondoLab.png-1be7bc0682a8c749e21eecdeed5ae300.ctex"
+uid="uid://dpo3mro1woqr3"
+path="res://.godot/imported/fondoLab_patrones.png-e6bb5266ba54f55e82f115d7e03ada73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/fondoLab.png"
-dest_files=["res://.godot/imported/fondoLab.png-1be7bc0682a8c749e21eecdeed5ae300.ctex"]
+source_file="res://assets/backgrounds/fondoLab_patrones.png"
+dest_files=["res://.godot/imported/fondoLab_patrones.png-e6bb5266ba54f55e82f115d7e03ada73.ctex"]
 
 [params]
 

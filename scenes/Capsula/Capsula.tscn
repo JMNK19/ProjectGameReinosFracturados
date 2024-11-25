@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ckoj6l2xi4uyp" path="res://assets/Sprites_Capsula/Capsula Criatura02.png" id="2_uwip5"]
 [ext_resource type="Texture2D" uid="uid://c0yyljatddjnr" path="res://assets/Sprites_Capsula/Capsula Criatura03.png" id="3_g5tp0"]
 [ext_resource type="Texture2D" uid="uid://cu0h4dyadpxlb" path="res://assets/Sprites_Capsula/Capsula_vacia.png" id="4_kgq2l"]
+[ext_resource type="Script" path="res://scenes/capsula/Capsula.gd" id="5_u3s53"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ngltq"]
 atlas = ExtResource("1_7kxod")
@@ -329,7 +330,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"criatura01",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -476,15 +477,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_843xu"]
-size = Vector2(64, 128)
-
-[node name="Capsula" type="StaticBody2D"]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_smt5m")
-animation = &"criatura02"
-frame_progress = 0.842399
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_843xu")
+animation = &"criatura01"
+frame_progress = 0.444453
+script = ExtResource("5_u3s53")

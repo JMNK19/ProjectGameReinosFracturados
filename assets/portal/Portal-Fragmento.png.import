@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du6sjywm7e3ey"
-path="res://.godot/imported/fondoLab.png-1be7bc0682a8c749e21eecdeed5ae300.ctex"
+uid="uid://b56nkcptohntq"
+path="res://.godot/imported/Portal-Fragmento.png-20b6a899bb6a69298d1d6920afee7a55.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/fondoLab.png"
-dest_files=["res://.godot/imported/fondoLab.png-1be7bc0682a8c749e21eecdeed5ae300.ctex"]
+source_file="res://assets/portal/Portal-Fragmento.png"
+dest_files=["res://.godot/imported/Portal-Fragmento.png-20b6a899bb6a69298d1d6920afee7a55.ctex"]
 
 [params]
 

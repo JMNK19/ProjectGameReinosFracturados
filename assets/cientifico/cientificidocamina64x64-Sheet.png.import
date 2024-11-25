@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du6sjywm7e3ey"
-path="res://.godot/imported/fondoLab.png-1be7bc0682a8c749e21eecdeed5ae300.ctex"
+uid="uid://cksxg3rp03bba"
+path="res://.godot/imported/cientificidocamina64x64-Sheet.png-ebae84699a06262d12ff8cc4ae886ce0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/fondoLab.png"
-dest_files=["res://.godot/imported/fondoLab.png-1be7bc0682a8c749e21eecdeed5ae300.ctex"]
+source_file="res://assets/cientifico/cientificidocamina64x64-Sheet.png"
+dest_files=["res://.godot/imported/cientificidocamina64x64-Sheet.png-ebae84699a06262d12ff8cc4ae886ce0.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du6sjywm7e3ey"
-path="res://.godot/imported/fondoLab.png-1be7bc0682a8c749e21eecdeed5ae300.ctex"
+uid="uid://c8q8la2mwlw7"
+path="res://.godot/imported/Cientifico-reposo 64x64-Sheet.png-22a79438a2ea1415e01bdb137ce36a40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/fondoLab.png"
-dest_files=["res://.godot/imported/fondoLab.png-1be7bc0682a8c749e21eecdeed5ae300.ctex"]
+source_file="res://assets/cientifico/Cientifico-reposo 64x64-Sheet.png"
+dest_files=["res://.godot/imported/Cientifico-reposo 64x64-Sheet.png-22a79438a2ea1415e01bdb137ce36a40.ctex"]
 
 [params]
 
