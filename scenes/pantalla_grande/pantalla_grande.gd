@@ -4,7 +4,7 @@ extends AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pantalla_grande.play("datos")
+	pantalla_grande.play(animation)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

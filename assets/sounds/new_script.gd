@@ -1,11 +1,9 @@
-extends AnimatedSprite2D
-@onready var animated_sprite_2d = $"."
+extends Node
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	animated_sprite_2d.play(animation)
-	pass
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

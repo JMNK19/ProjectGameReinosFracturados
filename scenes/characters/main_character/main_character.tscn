@@ -182,7 +182,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
-"speed": 4.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -210,7 +210,7 @@ script = ExtResource("1_ctlol")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tvd2s")
-frame_progress = 0.955889
+animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, -0.5)

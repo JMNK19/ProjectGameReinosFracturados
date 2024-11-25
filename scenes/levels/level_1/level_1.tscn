@@ -1,14 +1,14 @@
 [gd_scene load_steps=13 format=3 uid="uid://d2yyilylsb85d"]
 
 [ext_resource type="Texture2D" uid="uid://du6sjywm7e3ey" path="res://assets/backgrounds/fondoLab.png" id="1_jx10p"]
-[ext_resource type="Texture2D" path="res://assets/backgrounds/fondoLab_patrones.png" id="2_h5r8s"]
-[ext_resource type="Texture2D" path="res://assets/tilesets/tile_suelo.png" id="2_lwkc8"]
+[ext_resource type="Texture2D" uid="uid://dpo3mro1woqr3" path="res://assets/backgrounds/fondoLab_patrones.png" id="2_h5r8s"]
+[ext_resource type="Texture2D" uid="uid://b7vjkwq70mvt8" path="res://assets/tilesets/tile_suelo.png" id="2_lwkc8"]
 [ext_resource type="PackedScene" uid="uid://cd7q7toq8bjmp" path="res://scenes/characters/main_character/main_character.tscn" id="3_sv86j"]
 [ext_resource type="PackedScene" uid="uid://bshap8akqrwav" path="res://scenes/pantalla_pequenia/pantalla_pequenia.tscn" id="4_dmga0"]
 [ext_resource type="PackedScene" uid="uid://8rbt5lmdrp0s" path="res://scenes/camera/camera.tscn" id="4_tx36t"]
 [ext_resource type="Texture2D" uid="uid://b2m6ne541cxn" path="res://assets/Objetos_Secundarios/Mesa/Mesa laboratorio.png" id="5_78aar"]
 [ext_resource type="PackedScene" uid="uid://c706c21im3p8v" path="res://scenes/pantalla_grande/pantalla_grande.tscn" id="5_va3hj"]
-[ext_resource type="Texture2D" path="res://assets/Objetos_Secundarios/Estante/Estante.png" id="8_s85y8"]
+[ext_resource type="Texture2D" uid="uid://uxuogl2mrfci" path="res://assets/Objetos_Secundarios/Estante/Estante.png" id="8_s85y8"]
 [ext_resource type="PackedScene" uid="uid://dc5jtbhghdn71" path="res://scenes/capsula/Capsula.tscn" id="9_6rtje"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pjjtp"]
@@ -367,10 +367,14 @@ frame_progress = 0.0
 
 [node name="pantalla_pequenia" parent="." instance=ExtResource("4_dmga0")]
 position = Vector2(215, 509)
+frame_progress = 0.0
 
 [node name="MesaLaboratorio" type="Sprite2D" parent="."]
 position = Vector2(348, 555)
 texture = ExtResource("5_78aar")
+
+[node name="capsula" parent="." instance=ExtResource("9_6rtje")]
+position = Vector2(144, 513)
 
 [node name="MainCharacter" parent="." instance=ExtResource("3_sv86j")]
 position = Vector2(58, 546)
@@ -385,11 +389,12 @@ character = NodePath("../MainCharacter")
 position = Vector2(558, 545)
 texture = ExtResource("8_s85y8")
 
-[node name="AnimatedSprite2D" parent="." instance=ExtResource("9_6rtje")]
-position = Vector2(135, 517)
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_jypmy")
 rendering_quadrant_size = 32
 format = 2
 layer_0/tile_data = PackedInt32Array(1179649, 589824, 0, 1179648, 589824, 0, 1179650, 589824, 0, 1179651, 589824, 0, 1179652, 589824, 0, 1179653, 589824, 0, 1179654, 589824, 0, 1179655, 589824, 0, 1179656, 589824, 0, 1179657, 589824, 0, 1179658, 589824, 0, 1179659, 589824, 0, 1179660, 589824, 0, 1179661, 589824, 0, 1179662, 589824, 0, 1179663, 589824, 0, 1179664, 131072, 2, 1179665, 131072, 2, 1179666, 131072, 2, 1179667, 655360, 0, 1179647, 917504, 3, 1114111, 917504, 3, 1048575, 393216, 4, 983039, 917504, 3, 917503, 917504, 3, 851967, 917504, 3, 786431, 917504, 3, 720895, 917504, 3, 655359, 393216, 4, 589823, 917504, 3, 1245183, 917504, 3, 1245203, 131072, 1, 1245202, 524288, 1, 1245201, 524288, 1, 1245200, 524288, 1, 1310719, 917504, 3, 1245184, 524288, 1, 1245185, 524288, 1, 1245186, 524288, 1, 1245187, 524288, 1, 1245188, 524288, 1, 1245189, 524288, 1, 1245190, 524288, 1, 1245191, 524288, 1, 1245192, 524288, 1, 1245193, 524288, 1, 1245194, 524288, 1, 1245195, 524288, 1, 1245196, 524288, 1, 1245197, 524288, 1, 1245198, 524288, 1, 1245199, 524288, 1, 1376255, 393216, 4, 1310720, 524288, 1, 1310721, 524288, 1, 1310722, 524288, 1, 1310723, 524288, 1, 1310724, 524288, 1, 1310725, 524288, 1, 1310726, 524288, 1, 1310727, 524288, 1, 1310728, 524288, 1, 1310729, 524288, 1, 1310730, 524288, 1, 1310731, 524288, 1, 1310732, 524288, 1, 1310733, 524288, 1, 1310734, 524288, 1, 1310735, 524288, 1, 1310736, 524288, 1, 1310737, 524288, 1, 1310738, 524288, 1, 1310739, 131072, 1)
+
+[node name="capsula2" parent="." instance=ExtResource("9_6rtje")]
+position = Vector2(476, 512)
+animation = &"criatura02"
