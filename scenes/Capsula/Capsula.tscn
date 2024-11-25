@@ -1,6 +1,6 @@
 [gd_scene load_steps=71 format=3 uid="uid://dc5jtbhghdn71"]
 
-[ext_resource type="Texture2D" uid="uid://du1s1w1nf28n0" path="res://assets/Sprites_Capsula/Capsula Criatura01.png" id="1_7kxod"]
+[ext_resource type="Texture2D" uid="uid://chxehocw7tj7" path="res://assets/Sprites_Capsula/Capsula Criatura01 con agua.png" id="1_7kxod"]
 [ext_resource type="Texture2D" uid="uid://ckoj6l2xi4uyp" path="res://assets/Sprites_Capsula/Capsula Criatura02.png" id="2_uwip5"]
 [ext_resource type="Texture2D" uid="uid://c0yyljatddjnr" path="res://assets/Sprites_Capsula/Capsula Criatura03.png" id="3_g5tp0"]
 [ext_resource type="Texture2D" uid="uid://cu0h4dyadpxlb" path="res://assets/Sprites_Capsula/Capsula_vacia.png" id="4_kgq2l"]
