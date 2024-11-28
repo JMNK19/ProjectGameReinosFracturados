@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://d2yyilylsb85d"]
+[gd_scene load_steps=17 format=3 uid="uid://d2yyilylsb85d"]
 
 [ext_resource type="Texture2D" uid="uid://du6sjywm7e3ey" path="res://assets/backgrounds/fondoLab.png" id="1_jx10p"]
 [ext_resource type="Texture2D" uid="uid://dpo3mro1woqr3" path="res://assets/backgrounds/fondoLab_patrones.png" id="2_h5r8s"]
 [ext_resource type="Texture2D" uid="uid://b7vjkwq70mvt8" path="res://assets/tilesets/tile_suelo.png" id="2_lwkc8"]
+[ext_resource type="Texture2D" uid="uid://bv4l6s83oegim" path="res://assets/backgrounds/fondonewlab.png" id="3_m63ex"]
 [ext_resource type="PackedScene" uid="uid://cd7q7toq8bjmp" path="res://scenes/characters/main_character/main_character.tscn" id="3_sv86j"]
 [ext_resource type="PackedScene" uid="uid://bshap8akqrwav" path="res://scenes/pantalla_pequenia/pantalla_pequenia.tscn" id="4_dmga0"]
 [ext_resource type="PackedScene" uid="uid://8rbt5lmdrp0s" path="res://scenes/camera/camera.tscn" id="4_tx36t"]
@@ -10,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://c706c21im3p8v" path="res://scenes/pantalla_grande/pantalla_grande.tscn" id="5_va3hj"]
 [ext_resource type="Texture2D" uid="uid://uxuogl2mrfci" path="res://assets/Objetos_Secundarios/Estante/Estante.png" id="8_s85y8"]
 [ext_resource type="PackedScene" uid="uid://dc5jtbhghdn71" path="res://scenes/capsula/Capsula.tscn" id="9_6rtje"]
+[ext_resource type="FontFile" uid="uid://dregmkvncw55k" path="res://assets/fonts/press_Sstart_2p/PressStart2P-Regular.ttf" id="11_1oixs"]
+[ext_resource type="PackedScene" uid="uid://ppnitbtbnm4w" path="res://scenes/characters/asistente/asistente.tscn" id="13_a3fel"]
+[ext_resource type="Texture2D" uid="uid://cjnmowssx3hfp" path="res://assets/portal/Maquina-Dimensional.png" id="14_4ofye"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pjjtp"]
 texture = ExtResource("2_lwkc8")
@@ -340,7 +344,8 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_jypmy"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_pjjtp")
 
 [node name="level1" type="Node2D"]
@@ -361,40 +366,131 @@ position = Vector2(648, 402)
 scale = Vector2(10, 10)
 texture = ExtResource("2_h5r8s")
 
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Fondonewlab" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(847, 416)
+texture = ExtResource("3_m63ex")
+
+[node name="Fondonewlab2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(1231, 416)
+texture = ExtResource("3_m63ex")
+
 [node name="pantalla_grande" parent="." instance=ExtResource("5_va3hj")]
-position = Vector2(346, 507)
+position = Vector2(1093, 405)
 frame_progress = 0.0
 
 [node name="pantalla_pequenia" parent="." instance=ExtResource("4_dmga0")]
-position = Vector2(215, 509)
+position = Vector2(847, 523)
 frame_progress = 0.0
 
 [node name="MesaLaboratorio" type="Sprite2D" parent="."]
-position = Vector2(348, 555)
+position = Vector2(836, 554)
 texture = ExtResource("5_78aar")
 
 [node name="capsula" parent="." instance=ExtResource("9_6rtje")]
-position = Vector2(144, 513)
+position = Vector2(1139, 512)
+
+[node name="Title" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 302.0
+offset_top = 293.0
+offset_right = 342.0
+offset_bottom = 333.0
+
+[node name="Label" type="Label" parent="Title"]
+layout_mode = 0
+offset_left = -47.0
+offset_top = 9.0
+offset_right = 113.0
+offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("11_1oixs")
+uppercase = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 93.0
+offset_top = 422.0
+offset_right = 133.0
+offset_bottom = 462.0
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -37.0
+offset_top = -3.0
+offset_right = 123.0
+offset_bottom = 20.0
+theme_override_fonts/font = ExtResource("11_1oixs")
+text = "Movimiento"
+
+[node name="Label3" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -69.0
+offset_top = 32.0
+offset_right = 155.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("11_1oixs")
+text = "Flechas ← → y ↑"
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 404.0
+offset_top = 421.0
+offset_right = 444.0
+offset_bottom = 461.0
+
+[node name="Label2" type="Label" parent="Control2"]
+layout_mode = 0
+offset_left = -63.0
+offset_top = -12.0
+offset_right = 35.0
+offset_bottom = 11.0
+theme_override_fonts/font = ExtResource("11_1oixs")
+text = "Ataque"
+
+[node name="Label3" type="Label" parent="Control2"]
+layout_mode = 0
+offset_left = -75.0
+offset_top = 23.0
+offset_right = 45.0
+offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("11_1oixs")
+text = "Tecla X"
+
+[node name="Estante" type="Sprite2D" parent="."]
+position = Vector2(957, 540)
+texture = ExtResource("8_s85y8")
 
 [node name="MainCharacter" parent="." instance=ExtResource("3_sv86j")]
 position = Vector2(58, 546)
+max_jumps = 0
 
 [node name="Camera2D" parent="." node_paths=PackedStringArray("character") instance=ExtResource("4_tx36t")]
 position = Vector2(316, 879)
 limit_left = -20
 limit_top = 50
+limit_right = 1400
 character = NodePath("../MainCharacter")
-
-[node name="Estante" type="Sprite2D" parent="."]
-position = Vector2(558, 545)
-texture = ExtResource("8_s85y8")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_jypmy")
 rendering_quadrant_size = 32
 format = 2
-layer_0/tile_data = PackedInt32Array(1179649, 589824, 0, 1179648, 589824, 0, 1179650, 589824, 0, 1179651, 589824, 0, 1179652, 589824, 0, 1179653, 589824, 0, 1179654, 589824, 0, 1179655, 589824, 0, 1179656, 589824, 0, 1179657, 589824, 0, 1179658, 589824, 0, 1179659, 589824, 0, 1179660, 589824, 0, 1179661, 589824, 0, 1179662, 589824, 0, 1179663, 589824, 0, 1179664, 131072, 2, 1179665, 131072, 2, 1179666, 131072, 2, 1179667, 655360, 0, 1179647, 917504, 3, 1114111, 917504, 3, 1048575, 393216, 4, 983039, 917504, 3, 917503, 917504, 3, 851967, 917504, 3, 786431, 917504, 3, 720895, 917504, 3, 655359, 393216, 4, 589823, 917504, 3, 1245183, 917504, 3, 1245203, 131072, 1, 1245202, 524288, 1, 1245201, 524288, 1, 1245200, 524288, 1, 1310719, 917504, 3, 1245184, 524288, 1, 1245185, 524288, 1, 1245186, 524288, 1, 1245187, 524288, 1, 1245188, 524288, 1, 1245189, 524288, 1, 1245190, 524288, 1, 1245191, 524288, 1, 1245192, 524288, 1, 1245193, 524288, 1, 1245194, 524288, 1, 1245195, 524288, 1, 1245196, 524288, 1, 1245197, 524288, 1, 1245198, 524288, 1, 1245199, 524288, 1, 1376255, 393216, 4, 1310720, 524288, 1, 1310721, 524288, 1, 1310722, 524288, 1, 1310723, 524288, 1, 1310724, 524288, 1, 1310725, 524288, 1, 1310726, 524288, 1, 1310727, 524288, 1, 1310728, 524288, 1, 1310729, 524288, 1, 1310730, 524288, 1, 1310731, 524288, 1, 1310732, 524288, 1, 1310733, 524288, 1, 1310734, 524288, 1, 1310735, 524288, 1, 1310736, 524288, 1, 1310737, 524288, 1, 1310738, 524288, 1, 1310739, 131072, 1)
+layer_0/tile_data = PackedInt32Array(1179649, 589824, 0, 1179648, 589824, 0, 1179650, 589824, 0, 1179651, 589824, 0, 1179652, 589824, 0, 1179653, 589824, 0, 1179654, 589824, 0, 1179655, 589824, 0, 1179656, 589824, 0, 1179657, 589824, 0, 1179658, 589824, 0, 1179659, 589824, 0, 1179660, 589824, 0, 1179661, 589824, 0, 1179662, 589824, 0, 1179663, 589824, 0, 1179664, 131072, 2, 1179665, 131072, 2, 1179666, 131072, 2, 1179667, 589824, 0, 1179647, 917504, 3, 1114111, 917504, 3, 1048575, 393216, 4, 983039, 917504, 3, 917503, 917504, 3, 851967, 917504, 3, 786431, 917504, 3, 720895, 917504, 3, 655359, 393216, 4, 589823, 917504, 3, 1245183, 917504, 3, 1245203, 524288, 1, 1245202, 524288, 1, 1245201, 524288, 1, 1245200, 524288, 1, 1310719, 917504, 3, 1245184, 524288, 1, 1245185, 524288, 1, 1245186, 524288, 1, 1245187, 524288, 1, 1245188, 524288, 1, 1245189, 524288, 1, 1245190, 524288, 1, 1245191, 524288, 1, 1245192, 524288, 1, 1245193, 524288, 1, 1245194, 524288, 1, 1245195, 524288, 1, 1245196, 524288, 1, 1245197, 524288, 1, 1245198, 524288, 1, 1245199, 524288, 1, 1376255, 393216, 4, 1310720, 524288, 1, 1310721, 524288, 1, 1310722, 524288, 1, 1310723, 524288, 1, 1310724, 524288, 1, 1310725, 524288, 1, 1310726, 524288, 1, 1310727, 524288, 1, 1310728, 524288, 1, 1310729, 524288, 1, 1310730, 524288, 1, 1310731, 524288, 1, 1310732, 524288, 1, 1310733, 524288, 1, 1310734, 524288, 1, 1310735, 524288, 1, 1310736, 524288, 1, 1310737, 524288, 1, 1310738, 524288, 1, 1310739, 524288, 1, 1179668, 589824, 0, 1179669, 589824, 0, 1179670, 589824, 0, 1179671, 589824, 0, 1179672, 589824, 0, 1179673, 589824, 0, 1179674, 589824, 0, 1179675, 589824, 0, 1179676, 589824, 0, 1179677, 589824, 0, 1179678, 589824, 0, 1179679, 589824, 0, 1179680, 589824, 0, 1179681, 589824, 0, 1179682, 589824, 0, 1179683, 589824, 0, 1179684, 589824, 0, 1179685, 589824, 0, 1245204, 524288, 1, 1310740, 524288, 1, 1245205, 524288, 1, 1310741, 524288, 1, 1245206, 524288, 1, 1310742, 524288, 1, 1310743, 524288, 1, 1245207, 524288, 1, 1310744, 524288, 1, 1245208, 524288, 1, 1245209, 524288, 1, 1310745, 524288, 1, 1310746, 524288, 1, 1310747, 524288, 1, 1245211, 524288, 1, 1245210, 524288, 1, 1245212, 524288, 1, 1310748, 524288, 1, 1310749, 524288, 1, 1245213, 524288, 1, 1245214, 524288, 1, 1310750, 524288, 1, 1245215, 524288, 1, 1310751, 524288, 1, 1310752, 524288, 1, 1310753, 524288, 1, 1245217, 524288, 1, 1245216, 524288, 1, 1245218, 524288, 1, 1245219, 524288, 1, 1310755, 524288, 1, 1310754, 524288, 1, 1310756, 524288, 1, 1245220, 524288, 1, 1245221, 524288, 1, 1310757, 524288, 1, 1179686, 589824, 0, 1179687, 589824, 0, 1179688, 589824, 0, 1179689, 589824, 0, 1179690, 589824, 0, 1179691, 589824, 0, 1179692, 589824, 0, 1245222, 524288, 1, 1245223, 524288, 1, 1245224, 524288, 1, 1245225, 524288, 1, 1245226, 524288, 1, 1245227, 524288, 1, 1245228, 524288, 1, 1310758, 524288, 1, 1310759, 524288, 1, 1310760, 524288, 1, 1310761, 524288, 1, 1310762, 524288, 1, 1310763, 524288, 1, 1310764, 524288, 1)
 
 [node name="capsula2" parent="." instance=ExtResource("9_6rtje")]
-position = Vector2(476, 512)
+position = Vector2(1053, 511)
 animation = &"criatura02"
+
+[node name="Asistente" parent="." instance=ExtResource("13_a3fel")]
+position = Vector2(751, 544)
+scale = Vector2(-1, 1)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Maquina-dimensional" type="Sprite2D" parent="."]
+position = Vector2(1318, 532)
+texture = ExtResource("14_4ofye")
