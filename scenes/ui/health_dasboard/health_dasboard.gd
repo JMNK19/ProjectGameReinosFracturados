@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 signal item_added(item, cantidad:int)
+signal item_consumed(tipo, cantidad:int)
 
 # Variable (públicas) de vida y puntuación
 var vida_actual = 105 # Variable para menejo de vida
@@ -60,3 +61,11 @@ func add_item_inventario(item):
 	else:
 		inventario[item.tipo] += 1
 	item_added.emit(item, inventario[item.tipo])
+
+func consumir_item(tipo):
+	if inventario.has(tipo):
+		inventario[tipo] -= 1
+		item_consumed.emit(tipo, inventario[tipo])
+		if(inventario[tipo] <= 0):
+			inventario.erase(tipo)
+	

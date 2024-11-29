@@ -149,3 +149,4 @@ script = ExtResource("13_y6sr2")
 layout_mode = 2
 
 [connection signal="item_added" from="." to="Inventario/Inventario_UI" method="_on_canvas_layer_item_added"]
+[connection signal="item_consumed" from="." to="Inventario/Inventario_UI" method="_on_canvas_layer_item_consumed"]

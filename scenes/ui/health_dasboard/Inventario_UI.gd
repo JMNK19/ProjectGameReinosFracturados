@@ -20,3 +20,13 @@ func add_item(tipo, texture: CompressedTexture2D, cantidad: int):
 
 func _on_canvas_layer_item_added(item, cantidad):
 	add_item(item.tipo, item.get_texture(), cantidad)
+
+
+func _on_canvas_layer_item_consumed(tipo, cantidad):
+	var nombre_nodo = "inventario_item_"+str(tipo)
+	if contenedor.has_node(nombre_nodo):
+		var nodo_existente = contenedor.get_node(nombre_nodo)
+		if cantidad > 0:
+			nodo_existente.actualizar(cantidad)
+		else:
+			nodo_existente.queue_free()
