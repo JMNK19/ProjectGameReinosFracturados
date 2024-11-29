@@ -398,7 +398,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"criatura02",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -466,7 +466,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"criatura03",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,

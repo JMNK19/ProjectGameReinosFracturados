@@ -1,0 +1,116 @@
+[gd_scene load_steps=14 format=3 uid="uid://80dko8meh0bs"]
+
+[ext_resource type="Texture2D" uid="uid://cjnmowssx3hfp" path="res://assets/portal/Maquina-Dimensional.png" id="1_0xduf"]
+[ext_resource type="Texture2D" uid="uid://dj0d77xgfwnoi" path="res://assets/portal/Portal-Fragmento.png" id="1_vleyn"]
+[ext_resource type="Texture2D" uid="uid://dl3tuj1matft" path="res://assets/portal/Portal_animado.png" id="2_pdjj0"]
+[ext_resource type="Script" path="res://scenes/portal/portal_animado.gd" id="3_yo32o"]
+[ext_resource type="AudioStream" uid="uid://cykapjj2sqo0q" path="res://assets/sounds/portal.mp3" id="4_kalx3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h4ecv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0xduf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn6y0"]
+atlas = ExtResource("2_pdjj0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfode"]
+atlas = ExtResource("2_pdjj0")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mp75n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cn6y0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfode")
+}],
+"loop": true,
+"name": &"animacion",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vleyn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0xag"]
+size = Vector2(20, 89)
+
+[sub_resource type="Animation" id="Animation_jx74c"]
+resource_name = "creciente"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("portal:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(1, 1), Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_ymp0j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("portal:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ueee"]
+_data = {
+"RESET": SubResource("Animation_ymp0j"),
+"creciente": SubResource("Animation_jx74c")
+}
+
+[node name="maquina_portal" type="Area2D"]
+script = ExtResource("3_yo32o")
+
+[node name="maquina" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h4ecv")
+
+[node name="portal" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-10, -3)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_mp75n")
+animation = &"animacion"
+frame_progress = 0.243818
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="portal"]
+stream = ExtResource("4_kalx3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-36, -4)
+shape = SubResource("RectangleShape2D_t0xag")
+
+[node name="AnimationPlayerPortalCreciente" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0ueee")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
