@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://dbsxpo5vkehjk"]
+
+[ext_resource type="Script" path="res://scenes/coleccionables/vida/pocion_vida.gd" id="1_1knkt"]
+[ext_resource type="Texture2D" uid="uid://dgcin0fqtv4bl" path="res://assets/Objetos_Secundarios/Estante/Pociones/Pocion roja.png" id="1_nywvv"]
+[ext_resource type="Texture2D" uid="uid://bdjaxc1i0ycm8" path="res://assets/Objetos_Secundarios/Estante/Pociones/Efecto_Pociones/01.png" id="3_fqaha"]
+[ext_resource type="Texture2D" uid="uid://jyuf12lr82mj" path="res://assets/Objetos_Secundarios/Estante/Pociones/Efecto_Pociones/02.png" id="4_8und4"]
+[ext_resource type="Texture2D" uid="uid://bb8di8k863igy" path="res://assets/Objetos_Secundarios/Estante/Pociones/Efecto_Pociones/03.png" id="5_4v5gk"]
+[ext_resource type="Texture2D" uid="uid://cuw0f41x821wa" path="res://assets/Objetos_Secundarios/Estante/Pociones/Efecto_Pociones/04.png" id="6_pdpfm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c527g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nywvv")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fqaha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8und4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4v5gk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pdpfm")
+}],
+"loop": false,
+"name": &"recoger",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_phnfr"]
+size = Vector2(11, 11)
+
+[node name="PocionVida" type="Area2D"]
+script = ExtResource("1_1knkt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_nywvv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c527g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 2.5)
+shape = SubResource("RectangleShape2D_phnfr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

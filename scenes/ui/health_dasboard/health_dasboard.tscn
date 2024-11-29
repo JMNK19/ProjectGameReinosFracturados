@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cp3c4brd4xv6g"]
+[gd_scene load_steps=14 format=3 uid="uid://cp3c4brd4xv6g"]
 
 [ext_resource type="Script" path="res://scenes/ui/health_dasboard/health_dasboard.gd" id="1_7n5do"]
 [ext_resource type="Texture2D" uid="uid://bqqsh5xlostq" path="res://assets/health_dashboard/Logo barra de vida.png" id="2_qouvn"]
@@ -8,6 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://cp1xsallkrad3" path="res://assets/health_dashboard/Coleccionable_gema.png" id="6_jl6bt"]
 [ext_resource type="Texture2D" uid="uid://dvmmf2qiokw4r" path="res://assets/health_dashboard/Numeros_por_02.png" id="7_4gebh"]
 [ext_resource type="Texture2D" uid="uid://cxumssnah16d" path="res://assets/health_dashboard/Numeros_00.png" id="8_t7wj6"]
+[ext_resource type="Texture2D" uid="uid://st2b53wyflce" path="res://assets/health_dashboard/Logo barra de municion.png" id="9_pbvev"]
+[ext_resource type="Texture2D" uid="uid://b8r5w1yt6qnfs" path="res://assets/health_dashboard/Barra de municion_vacio.png" id="10_3v8u4"]
+[ext_resource type="Texture2D" uid="uid://ct33y3oe8o4im" path="res://assets/health_dashboard/Barra de municion_marco.png" id="11_bphcj"]
+[ext_resource type="Texture2D" uid="uid://c8yt8oewrn1tc" path="res://assets/health_dashboard/Barra municion_progreso.png" id="12_ja62l"]
+[ext_resource type="Script" path="res://scenes/ui/health_dasboard/Inventario_UI.gd" id="13_y6sr2"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 scale = Vector2(2, 2)
@@ -24,9 +29,9 @@ offset_bottom = 45.5
 
 [node name="TextureRect" type="TextureRect" parent="BarraVida"]
 layout_mode = 0
-offset_left = 10.5
+offset_left = 11.0
 offset_top = 10.0
-offset_right = 42.5
+offset_right = 43.0
 offset_bottom = 42.0
 texture = ExtResource("2_qouvn")
 
@@ -90,3 +95,57 @@ offset_top = 1.71893
 offset_right = -13.7676
 offset_bottom = 17.7189
 texture = ExtResource("8_t7wj6")
+
+[node name="BarraMunicion" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 11.5
+offset_top = 66.0
+offset_right = 51.5
+offset_bottom = 106.0
+
+[node name="TextureRect" type="TextureRect" parent="BarraMunicion"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -11.0
+offset_right = 42.0
+offset_bottom = 21.0
+texture = ExtResource("9_pbvev")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="BarraMunicion"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = -10.5
+offset_right = 160.0
+offset_bottom = 21.5
+max_value = 77.0
+value = 77.0
+texture_under = ExtResource("10_3v8u4")
+texture_over = ExtResource("11_bphcj")
+texture_progress = ExtResource("12_ja62l")
+texture_progress_offset = Vector2(25, 11)
+
+[node name="Inventario" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 277.449
+offset_top = 249.614
+offset_right = 317.449
+offset_bottom = 289.614
+
+[node name="Inventario_UI" type="PanelContainer" parent="Inventario"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -92.9494
+offset_top = 19.8857
+offset_right = 65.0506
+offset_bottom = 69.8857
+grow_horizontal = 2
+script = ExtResource("13_y6sr2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Inventario/Inventario_UI"]
+layout_mode = 2
+
+[connection signal="item_added" from="." to="Inventario/Inventario_UI" method="_on_canvas_layer_item_added"]

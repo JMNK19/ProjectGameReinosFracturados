@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmfgmyort8p54"]
+
+[ext_resource type="Script" path="res://scenes/ui/inventario/inventario_item_ui.gd" id="1_nbvxq"]
+[ext_resource type="Texture2D" uid="uid://crj5l38q416ie" path="res://assets/inventario/Anotación 2024-11-29 032855.jpg" id="1_p7njl"]
+[ext_resource type="Texture2D" uid="uid://dgcin0fqtv4bl" path="res://assets/Objetos_Secundarios/Estante/Pociones/Pocion roja.png" id="2_e7rs4"]
+
+[node name="InventarioItemUI" type="Panel"]
+custom_minimum_size = Vector2(50, 50)
+script = ExtResource("1_nbvxq")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_p7njl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.9494
+offset_top = -16.6143
+offset_right = 14.0506
+offset_bottom = 9.38568
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_e7rs4")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -36.4494
+offset_top = -22.1143
+offset_right = 3.5506
+offset_bottom = 0.885681
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+text = "2"
+horizontal_alignment = 2
