@@ -1,5 +1,6 @@
 extends CharacterBody2D
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var conversacion = $Area2D/conversacion
 
 
 const SPEED = 300.0
@@ -18,3 +19,11 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("player"):
+		conversacion.queue_free()
+		DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/level_1/level1_asistente_inicio.dialogue"))
+		
+		pass # Replace with function body.

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://csnsm1kklmui3"
+path="res://.godot/imported/level1_asistente_inicio.dialogue-479a51fb950fe1fe67c218d7bcf948ed.tres"
+
+[deps]
+
+source_file="res://scenes/dialogues/level_1/level1_asistente_inicio.dialogue"
+dest_files=["res://.godot/imported/level1_asistente_inicio.dialogue-479a51fb950fe1fe67c218d7bcf948ed.tres"]
+
+[params]
+
+defaults=true
