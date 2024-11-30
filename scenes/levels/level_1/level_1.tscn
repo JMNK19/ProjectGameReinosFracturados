@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://2512ar4h41cn" path="res://assets/sounds/creatures.mp3" id="8_1bkac"]
 [ext_resource type="AudioStream" uid="uid://cab4agvhp44wx" path="res://assets/sounds/cap_azul.mp3" id="8_igx7s"]
 [ext_resource type="Texture2D" uid="uid://uxuogl2mrfci" path="res://assets/Objetos_Secundarios/Estante/Estante.png" id="8_s85y8"]
-[ext_resource type="PackedScene" uid="uid://dc5jtbhghdn71" path="res://scenes/capsula/Capsula.tscn" id="9_6rtje"]
+[ext_resource type="PackedScene" uid="uid://dc5jtbhghdn71" path="res://scenes/Capsula/Capsula.tscn" id="9_6rtje"]
 [ext_resource type="FontFile" uid="uid://dregmkvncw55k" path="res://assets/fonts/press_Sstart_2p/PressStart2P-Regular.ttf" id="11_1oixs"]
 [ext_resource type="PackedScene" uid="uid://ppnitbtbnm4w" path="res://scenes/characters/asistente/asistente.tscn" id="13_a3fel"]
 [ext_resource type="Texture2D" uid="uid://cg5bvjxa3sgyi" path="res://assets/labAdicional/separacionLab.png" id="16_as5mc"]
