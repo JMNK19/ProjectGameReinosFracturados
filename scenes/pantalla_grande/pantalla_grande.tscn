@@ -1,7 +1,8 @@
-[gd_scene load_steps=52 format=3 uid="uid://c706c21im3p8v"]
+[gd_scene load_steps=53 format=3 uid="uid://c706c21im3p8v"]
 
 [ext_resource type="Texture2D" uid="uid://b3xrk5pb607ju" path="res://assets/Objetos_Secundarios/Pantalla grande/Pantalla grande.png" id="1_ox2a7"]
 [ext_resource type="Script" path="res://scenes/pantalla_grande/pantalla_grande.gd" id="2_5oh8u"]
+[ext_resource type="AudioStream" uid="uid://cdni6w4sevdpf" path="res://assets/sounds/computer-glitch.mp3" id="3_xsol8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_36vfi"]
 atlas = ExtResource("1_ox2a7")
@@ -355,5 +356,13 @@ animations = [{
 [node name="pantalla_grande" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_qb8pe")
 animation = &"datos"
-frame_progress = 0.49712
+frame_progress = 0.289351
 script = ExtResource("2_5oh8u")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_xsol8")
+volume_db = -7.0
+pitch_scale = 0.8
+autoplay = true
+stream_paused = true
+max_distance = 110.0

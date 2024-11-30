@@ -1,0 +1,18 @@
+~ this_is_a_node_title
+
+Nathan: [[Hola|Bienvenido|Por fin llegas]], tengo nuevas noticias.
+Nathan: ¿Quieres que te diga primero la mala o la buena?.
+- Buena noticia
+	Nathan: La buena Noticia es que ya casi esta terminado la maquina dimensional.
+	Nathan: Y la mala noticia, es que no sabemos absolutamente nada de los peligros en otras dimensiones, es muy arriesgado continuar.
+- Mala noticia
+	Nathan: La mala noticia es que no sabemos absolutamente nada de los peligros en otras dimensiones, es muy arriesgado continuar.
+	Nathan: Y la buena Noticia es que ya casi esta terminado la maquina dimensional.
+	#- Start again => this_is_a_node_title
+#- End the conversation => END
+Nathan: ¿Quieres continuar?.
+- Si continuemos asumire los riesgos..
+	Nathan: Sigueme..
+- No es muy arriesgado
+
+=> END
