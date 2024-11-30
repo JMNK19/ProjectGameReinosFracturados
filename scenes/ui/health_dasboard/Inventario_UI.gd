@@ -1,5 +1,6 @@
 extends PanelContainer
 
+var tecla: String = ""
 
 @onready var contenedor = $HBoxContainer
 
@@ -10,7 +11,11 @@ func add_item(tipo, texture: CompressedTexture2D, cantidad: int):
 	if not contenedor.has_node(nombre_nodo):
 		var inventario_item = INVENTARIO_ITEM_UI.instantiate()
 		inventario_item.name = nombre_nodo
-		inventario_item.insertar(texture, cantidad)
+		if(tipo == "pocionVida"):
+			tecla = "U"
+		else:
+			tecla = "R"
+		inventario_item.insertar(texture, cantidad, tecla)
 		contenedor.add_child(inventario_item)
 	else:
 		var nodo_existente = contenedor.get_node(nombre_nodo)

@@ -4,12 +4,12 @@ signal item_added(item, cantidad:int)
 signal item_consumed(tipo, cantidad:int)
 
 # Variable (públicas) de vida y puntuación
-var vida_actual = 105 # Variable para menejo de vida
-var municion_actual = 11 # Variable para manejo de la munición
+var vida_actual = 0 # Variable para menejo de vida
+var municion_actual = 0 # Variable para manejo de la munición
 var min_vida = 0
 var min_municion = 0
 var max_vida = 105
-var max_municion = 11
+var max_municion = 77
 
 var inventario = {}
 
@@ -20,6 +20,8 @@ var inventario = {}
 
 #Función de inicialización
 func _ready():
+	barra_vida.value = vida_actual
+	barra_municion.value = municion_actual
 	self.visible = true
 
 #FUNCIONES PARA GESTIONAR LA VIDA DEL JUGADOR

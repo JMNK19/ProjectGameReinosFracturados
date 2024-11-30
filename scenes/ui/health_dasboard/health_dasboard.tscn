@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cp3c4brd4xv6g"]
+[gd_scene load_steps=15 format=3 uid="uid://cp3c4brd4xv6g"]
 
 [ext_resource type="Script" path="res://scenes/ui/health_dasboard/health_dasboard.gd" id="1_7n5do"]
 [ext_resource type="Texture2D" uid="uid://bqqsh5xlostq" path="res://assets/health_dashboard/Logo barra de vida.png" id="2_qouvn"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://ct33y3oe8o4im" path="res://assets/health_dashboard/Barra de municion_marco.png" id="11_bphcj"]
 [ext_resource type="Texture2D" uid="uid://c8yt8oewrn1tc" path="res://assets/health_dashboard/Barra municion_progreso.png" id="12_ja62l"]
 [ext_resource type="Script" path="res://scenes/ui/health_dasboard/Inventario_UI.gd" id="13_y6sr2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kncga"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="CanvasLayer" type="CanvasLayer"]
 scale = Vector2(2, 2)
@@ -42,7 +45,6 @@ offset_top = 10.0
 offset_right = 174.5
 offset_bottom = 42.0
 max_value = 105.0
-value = 105.0
 texture_under = ExtResource("3_kri6s")
 texture_over = ExtResource("4_r68oo")
 texture_progress = ExtResource("5_j1grn")
@@ -119,7 +121,6 @@ offset_top = -10.5
 offset_right = 160.0
 offset_bottom = 21.5
 max_value = 77.0
-value = 77.0
 texture_under = ExtResource("10_3v8u4")
 texture_over = ExtResource("11_bphcj")
 texture_progress = ExtResource("12_ja62l")
@@ -143,6 +144,7 @@ offset_top = 19.8857
 offset_right = 65.0506
 offset_bottom = 69.8857
 grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kncga")
 script = ExtResource("13_y6sr2")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Inventario/Inventario_UI"]
