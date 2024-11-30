@@ -1,10 +1,13 @@
-[gd_scene load_steps=32 format=3 uid="uid://cd7q7toq8bjmp"]
+[gd_scene load_steps=43 format=3 uid="uid://cd7q7toq8bjmp"]
 
 [ext_resource type="Script" path="res://scenes/characters/main_character/main_character.gd" id="1_ctlol"]
 [ext_resource type="Texture2D" uid="uid://c8q8la2mwlw7" path="res://assets/cientifico/Cientifico-reposo 64x64-Sheet.png" id="2_j7ivb"]
 [ext_resource type="Texture2D" uid="uid://cwghkydnwutky" path="res://assets/cientifico/cientifico_idle.png" id="4_6ml2l"]
+[ext_resource type="Texture2D" uid="uid://ccy60ao00a757" path="res://assets/cientifico/cientifico_con_arma/cientifico_con_arma_idle.png" id="5_4omqu"]
 [ext_resource type="Texture2D" uid="uid://vxtrr3y534pf" path="res://assets/cientifico/cientifico64x64_run.png" id="5_bkwag"]
 [ext_resource type="Texture2D" uid="uid://brj1yoyisjtfw" path="res://assets/cientifico/cientifico64x64_jump.png" id="5_lr45w"]
+[ext_resource type="Script" path="res://scenes/characters/main_character/Timer.gd" id="6_v31pu"]
+[ext_resource type="Texture2D" uid="uid://1nwab8j6ypw3" path="res://assets/cientifico/cientifico_con_arma/Cientifico_con_Arma_Run.png" id="7_cfial"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_el5gh"]
 atlas = ExtResource("2_j7ivb")
@@ -66,6 +69,22 @@ region = Rect2(128, 0, 64, 64)
 atlas = ExtResource("4_6ml2l")
 region = Rect2(192, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4p3rl"]
+atlas = ExtResource("5_4omqu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avv5f"]
+atlas = ExtResource("5_4omqu")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcc2s"]
+atlas = ExtResource("5_4omqu")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajaur"]
+atlas = ExtResource("5_4omqu")
+region = Rect2(192, 0, 64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_kao7p"]
 atlas = ExtResource("5_lr45w")
 region = Rect2(0, 0, 64, 64)
@@ -100,6 +119,22 @@ region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7gmq5"]
 atlas = ExtResource("5_bkwag")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7kvr"]
+atlas = ExtResource("7_cfial")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xg53"]
+atlas = ExtResource("7_cfial")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdr1y"]
+atlas = ExtResource("7_cfial")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdakf"]
+atlas = ExtResource("7_cfial")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tvd2s"]
@@ -166,6 +201,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_4p3rl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avv5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcc2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajaur")
+}],
+"loop": true,
+"name": &"idle_with_arma",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_kao7p")
 }, {
 "duration": 1.0,
@@ -200,6 +252,23 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7kvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xg53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdr1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdakf")
+}],
+"loop": true,
+"name": &"run_with_arma",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4yu2s"]
@@ -210,7 +279,7 @@ script = ExtResource("1_ctlol")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tvd2s")
-animation = &"run"
+animation = &"run_with_arma"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, -0.5)
@@ -219,4 +288,12 @@ shape = SubResource("RectangleShape2D_4yu2s")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 volume_db = -10.0
 
+[node name="PosicionDisparo" type="Marker2D" parent="."]
+position = Vector2(-0.07164, 10.5936)
+
+[node name="Timer" type="Timer" parent="."]
+script = ExtResource("6_v31pu")
+
 [connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+[connection signal="disparo_permitido" from="Timer" to="." method="_on_timer_disparo_permitido"]
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

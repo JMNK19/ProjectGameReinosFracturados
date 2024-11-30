@@ -8,11 +8,17 @@
 
 [node name="InventarioItemUI" type="Panel"]
 custom_minimum_size = Vector2(50, 50)
-anchors_preset = -1
-anchor_right = 0.043
-anchor_bottom = 0.077
-offset_right = -49.536
-offset_bottom = -49.896
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_nbvxq")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
