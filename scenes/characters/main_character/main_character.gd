@@ -12,6 +12,7 @@ var Door = false
 var _current_movement = "idle"
 var jump_count = 0 # Contador de saltos
 var _run_sound = preload("res://assets/sounds/walking1.mp3")
+
 var is_walking_sound_playing = false
 
 func _ready():
@@ -73,7 +74,13 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-
+func _unhandled_input(event):
+	if(event.is_action_released("curar")):
+		velocity.x = 0
+		HealthDasboard.consumir_item("pocionVida")
+	elif(event.is_action_released("recargar")):
+		velocity.x = 0
+		HealthDasboard.consumir_item("municion")
 
 
 func _on_audio_stream_player_2d_finished():

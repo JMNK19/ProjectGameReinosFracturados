@@ -16,7 +16,10 @@ var inventario = {}
 #Referenciamos la barra de vida
 @onready var barra_vida = $BarraVida/TextureProgressBar
 @onready var barra_municion = $BarraMunicion/TextureProgressBar
+@onready var audio_items = $AudioStreamPlayer2D
 
+const pocionVida_sonido = preload("res://assets/sonido_coleccionables/pocionVida.mp3")
+const municion_sonido = preload("res://assets/sonido_coleccionables/recargarPistolaLaser.mp3")
 
 #Función de inicialización
 func _ready():
@@ -67,7 +70,21 @@ func add_item_inventario(item):
 func consumir_item(tipo):
 	if inventario.has(tipo):
 		inventario[tipo] -= 1
+		if(tipo == "pocionVida"):
+			_play_sound(pocionVida_sonido)
+			add_vida(50)
+		elif(tipo == "municion"):
+			_play_sound(municion_sonido)
+			add_municion(77)
+		else:
+			pass
 		item_consumed.emit(tipo, inventario[tipo])
 		if(inventario[tipo] <= 0):
 			inventario.erase(tipo)
-	
+
+func _play_sound(sound):
+	# Pausamos el sonido
+	audio_items.stop()
+	# Reproducimos el sonido
+	audio_items.stream = sound
+	audio_items.play()

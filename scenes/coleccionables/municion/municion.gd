@@ -1,11 +1,11 @@
 extends Area2D
 
-var tipo = "pocionVida"
+var tipo = "municion"
 
 @onready var pocion = $AnimatedSprite2D
 @onready var audio_item = $AudioStreamPlayer2D
 
-const recoger_item_sonido = preload("res://assets/sonido_coleccionables/recogerItem.mp3")
+const recoger_item_sonido = preload("res://assets/sonido_coleccionables/municion_02.mp3")
 
 func _ready():
 	pocion.play("default")

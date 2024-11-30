@@ -150,5 +150,7 @@ script = ExtResource("13_y6sr2")
 [node name="HBoxContainer" type="HBoxContainer" parent="Inventario/Inventario_UI"]
 layout_mode = 2
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="item_added" from="." to="Inventario/Inventario_UI" method="_on_canvas_layer_item_added"]
 [connection signal="item_consumed" from="." to="Inventario/Inventario_UI" method="_on_canvas_layer_item_consumed"]

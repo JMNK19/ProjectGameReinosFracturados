@@ -1,12 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmfgmyort8p54"]
+[gd_scene load_steps=6 format=3 uid="uid://dmfgmyort8p54"]
 
 [ext_resource type="Script" path="res://scenes/ui/inventario/inventario_item_ui.gd" id="1_nbvxq"]
-[ext_resource type="Texture2D" uid="uid://crj5l38q416ie" path="res://assets/inventario/Anotación 2024-11-29 032855.jpg" id="1_p7njl"]
-[ext_resource type="Texture2D" uid="uid://dgcin0fqtv4bl" path="res://assets/Objetos_Secundarios/Estante/Pociones/Pocion roja.png" id="2_e7rs4"]
+[ext_resource type="Texture2D" uid="uid://d4m3kqtie8rep" path="res://assets/inventario/Panel extra.png" id="2_iss2l"]
+[ext_resource type="Texture2D" uid="uid://d31em5aw8qcx0" path="res://assets/inventario/Casilla_02.png" id="3_awm30"]
 [ext_resource type="FontFile" uid="uid://dregmkvncw55k" path="res://assets/Font_Item_Inventario/press_Sstart_2p/PressStart2P-Regular.ttf" id="4_br0ko"]
+[ext_resource type="Texture2D" uid="uid://bfo67l7m4i7rq" path="res://assets/inventario/pocion_vida.png" id="4_o2soh"]
 
 [node name="InventarioItemUI" type="Panel"]
 custom_minimum_size = Vector2(50, 50)
+anchors_preset = -1
+anchor_right = 0.043
+anchor_bottom = 0.077
+offset_right = -49.536
+offset_bottom = -49.896
 script = ExtResource("1_nbvxq")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
@@ -16,22 +22,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_p7njl")
+texture = ExtResource("2_iss2l")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_awm30")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -17.0
-offset_top = -16.0
-offset_right = 17.0
-offset_bottom = 14.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -17.0
+offset_bottom = -17.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_e7rs4")
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_o2soh")
+stretch_mode = 3
 
 [node name="Cantidad" type="Label" parent="."]
 layout_mode = 1
@@ -40,23 +51,25 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -13.0
-offset_top = -13.0
-offset_right = 3.0
-offset_bottom = 10.0
+offset_left = -19.0
+offset_top = -20.0
+offset_right = -3.0
+offset_bottom = 3.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.6, 0.6)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_br0ko")
-text = "2"
+text = "0"
 horizontal_alignment = 2
 
 [node name="Tecla" type="Label" parent="."]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 18.0
-offset_bottom = 25.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 22.0
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.494118, 0.494118, 0.494118, 1)
 theme_override_fonts/font = ExtResource("4_br0ko")
-text = "o"
+text = "U"
