@@ -1,6 +1,9 @@
 extends CanvasLayer
 ## A basic dialogue balloon for use with Dialogue Manager.
 
+const PATH_SPRITES = "res://scenes/dialogues/persons/"
+signal dialogue_ended
+
 ## The action to use for advancing the dialogue
 @export var next_action: StringName = &"ui_accept"
 
@@ -41,6 +44,13 @@ var dialogue_line: DialogueLine:
 
 		character_label.visible = not dialogue_line.character.is_empty()
 		character_label.text = tr(dialogue_line.character, "dialogue")
+		
+		# Eliminamos los nodos insertados
+		for n in portrait_node.get_children():
+			portrait_node.remove_child(n)
+			n.queue_free()
+		# Mostramos el avatar
+		portrait_node.add_child(_get_texture_for_dialogue(dialogue_line.character))
 
 		dialogue_label.hide()
 		dialogue_label.dialogue_line = dialogue_line
@@ -77,6 +87,10 @@ var dialogue_line: DialogueLine:
 
 ## The label showing the name of the currently speaking character
 @onready var character_label: RichTextLabel = %CharacterLabel
+
+@onready var portrait_node = $Balloon/Panel/Portrate
+@onready var character_portrait = $Balloon/Panel/Portrate/Sprite2D
+
 
 ## The label showing the currently spoken dialogue
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
@@ -120,7 +134,10 @@ func start(dialogue_resource: DialogueResource, title: String, extra_game_states
 ## Go to the next line
 func next(next_id: String) -> void:
 	self.dialogue_line = await resource.get_next_dialogue_line(next_id, temporary_game_states)
-
+	# Verificamos si no hay más diálogo
+	if not dialogue_line:
+		emit_signal("dialogue_ended")  # Emitir la señal de fin de diálogo
+		return
 
 #region Signals
 
@@ -134,6 +151,20 @@ func _on_mutated(_mutation: Dictionary) -> void:
 			balloon.hide()
 	)
 
+# Se carga la imagen del personaje que esté dialogando
+func _get_texture_for_dialogue(character: String):
+	if character.is_empty():
+		return null  # No se hace nada si no hay personaje
+
+	var person = character.to_lower().split(" ")[0]
+	var filename = "%s/" % [person] + "%s.tscn" % [person]
+
+	# Verificamos si la escena existe antes de intentar cargarla
+	if ResourceLoader.exists(PATH_SPRITES + filename):
+		return load(PATH_SPRITES + filename).instantiate()
+	else:
+		print("Error: No se encontró la escena para el personaje: " + character)
+		return null  # Retorna null si no se encuentra la escena
 
 func _on_balloon_gui_input(event: InputEvent) -> void:
 	# See if we need to skip typing of the dialogue

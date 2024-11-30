@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4um2d210su08"]
+
+[ext_resource type="Texture2D" uid="uid://cwghkydnwutky" path="res://assets/cientifico/cientifico_idle.png" id="1_eftim"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsdnh"]
+atlas = ExtResource("1_eftim")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bjqb"]
+atlas = ExtResource("1_eftim")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6634"]
+atlas = ExtResource("1_eftim")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_woj0q"]
+atlas = ExtResource("1_eftim")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cbkgp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsdnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bjqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6634")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_woj0q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="Cientifico" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(50, 95)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_cbkgp")
+autoplay = "default"

@@ -1,17 +1,19 @@
 ~ this_is_a_node_title
 Asistente: [[Hola|Bienvenido|Menos mal llegaste]], tengo nuevas noticias.
-Asitente: ¿Quieres que comience por la noticia mala o la buena?.
+Asistente: ¿Quieres que comience por la noticia mala o la buena?.
+Cientifico: .
 - Buena noticia
-	Asitente: La buena Noticia es que ya la maquina dimensional esta casi terminada .
-	Asitente: Y la mala noticia, es que no sabemos absolutamente nada de los peligros en otras dimensiones, es muy arriesgado continuar.
+	Asistente: La buena noticia es que ya casi esta terminada la maquina dimensional.
+	Asistente: Y la mala noticia, es que no sabemos absolutamente nada de los peligros en otras dimensiones, es muy arriesgado continuar.
 - Mala noticia
-	Asitente: La mala noticia es que no sabemos absolutamente nada de los peligros en otras dimensiones, es muy arriesgado continuar.
-	Asitente: Y la buena Noticia es que ya casi esta terminado la maquina dimensional.
+	Asistente: La mala noticia es que no sabemos absolutamente nada de los peligros en otras dimensiones, es muy arriesgado continuar.
+	Asistente: Y la buena noticia es que ya casi esta terminada la maquina dimensional.
 	#- Start again => this_is_a_node_title
 #- End the conversation => END
-Asitente: ¿Quieres continuar?.
-- Si continuemos asumire los riesgos..
-	Asitente: Sigueme..
-- No es muy arriesgado
+Asistente: ¿Quieres continuar?.
+Cientifico: .
+- Si continuemos, asumire los riesgos..
+	Asistente: Sigueme..
+- No, es muy arriesgado
 
 => END
