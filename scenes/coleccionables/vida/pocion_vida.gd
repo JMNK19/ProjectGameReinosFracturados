@@ -16,7 +16,7 @@ func _on_body_entered(body):
 		_play_sound(recoger_item_sonido)
 		pocion.play("recoger") #Animacion de recoger
 		HealthDasboard.add_item_inventario(self)
-		await  pocion.animation_finished #Esperamos que termine la anterior animación
+		await pocion.animation_finished #Esperamos que termine la anterior animación
 		self.queue_free() # Liberamos la memoria
 
 func get_texture() -> CompressedTexture2D:

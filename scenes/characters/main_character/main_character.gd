@@ -6,6 +6,13 @@ extends CharacterBody2D
 @export var max_jumps = 2 # Número máximo de saltos permitidos
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var audio_player= $AudioStreamPlayer2D
+@onready var disparo_timer = $Timer
+
+#Escena del disparo
+const disparo = preload("res://scenes/characters/main_character/Disparo/disparo.tscn")
+
+# Variable para controlar si el jugador puede disparar
+var can_shoot = true
 
 var Door = false
 
@@ -16,7 +23,7 @@ var _run_sound = preload("res://assets/sounds/walking1.mp3")
 var is_walking_sound_playing = false
 
 func _ready():
-	animated_sprite_2d.play("idle")
+	animated_sprite_2d.play("idle_with_arma")
 
 #Actualmente uso esta funcion para la puerta del laboratorio
 func _process(delta):
@@ -42,12 +49,12 @@ func _physics_process(delta):
 		animated_sprite_2d.scale.x = direction
 		if _current_movement != "run" and is_on_floor():
 			_current_movement = "run"
-			animated_sprite_2d.play("run")
+			animated_sprite_2d.play("run_with_arma")
 	else:
 		# Volver a "idle" si no hay movimiento horizontal
 		if _current_movement != "idle" and is_on_floor():
 			_current_movement = "idle"
-			animated_sprite_2d.play("idle")
+			animated_sprite_2d.play("idle_with_arma")
 
 	# Gravedad
 	if not is_on_floor():
@@ -81,11 +88,32 @@ func _unhandled_input(event):
 	elif(event.is_action_released("recargar")):
 		velocity.x = 0
 		HealthDasboard.consumir_item("municion")
+	elif(event.is_action_pressed("disparar") and can_shoot):
+		velocity.x = 0
+		HealthDasboard.remove_municion(7)
+		if(HealthDasboard.municion_disponible):
+			disparar_control()
+		can_shoot = false  # Desactivar el disparo temporalmente
+		disparo_timer.start()  # Iniciar el temporizador para permitir disparar nuevamente después de 2 segundos
 
 
 func _on_audio_stream_player_2d_finished():
 	pass # Replace with function body.
+
+func disparar_control():
+	var laser = disparo.instantiate()
 	
+	if(animated_sprite_2d.scale.x < 0):
+		laser.global_position = Vector2($PosicionDisparo.global_position.x-20, $PosicionDisparo.global_position.y)
+		laser.scale.x = -1
+		laser.direction = -224
+	elif(animated_sprite_2d.scale.x > 0):
+		laser.global_position = Vector2($PosicionDisparo.global_position.x+20, $PosicionDisparo.global_position.y)
+		laser.scale.x = 1
+		laser.direction = 224
+	
+	get_tree().call_group("nivel", "add_child", laser)
+
 
 func _play_sound(sound):
 	# Pausamos el sonido
@@ -97,4 +125,7 @@ func _play_sound(sound):
 func Open_Door():
 	if Door==true:
 		set_physics_process(false)
-	
+
+func _on_timer_disparo_permitido():
+	# Esta función es llamada cuando el temporizador finaliza
+	can_shoot = true  # Permitir disparar nuevamente
