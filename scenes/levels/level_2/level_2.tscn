@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj78lmi62eoh6"]
+
+[ext_resource type="Texture2D" uid="uid://ntiuliqkfchp" path="res://assets/backgrounds/level_2/Dimension-Cristal.png" id="1_fiftx"]
+
+[node name="Level2" type="Node2D"]
+
+[node name="Dimension-cristal" type="Sprite2D" parent="."]
+position = Vector2(576, 329)
+scale = Vector2(0.638393, 0.623047)
+texture = ExtResource("1_fiftx")
