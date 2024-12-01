@@ -592,7 +592,7 @@ scale = Vector2(2, 2)
 position = Vector2(684, 529)
 
 [node name="MainCharacter" parent="." instance=ExtResource("3_sv86j")]
-position = Vector2(686, 543)
+position = Vector2(63, 541)
 max_jumps = 0
 
 [node name="Camera2D" parent="." node_paths=PackedStringArray("character") instance=ExtResource("4_tx36t")]

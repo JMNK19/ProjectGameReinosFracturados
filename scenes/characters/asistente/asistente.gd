@@ -27,17 +27,11 @@ func _physics_process(delta):
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("player"):
-		var movimiento=false
-		body.set_physics_process(movimiento)
+		#body.set_physics_process(false)
 		conversacion.queue_free()
 		#DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/level_1/level1_asistente_inicio.dialogue"))
 		var balloon = BALLOON_SCENE.instantiate()
 		get_tree().current_scene.add_child(balloon)
 		balloon.start(dialogue_resource, dialogue_start)
-		#aqui como hago para activar el body._physics_process(true) cuando acabe el dialogo?
-		# Conectar la señal de fin de diálogo
-		balloon.connect("dialogue_ended", Callable(self, _on_dialogue_ended(body)))
+		#aqui como hago para activar el body.set_physics_process(true) cuando acabe el dialogo?
 		
-# Cuando termine el diálogo, reactivamos el _physics_process
-func _on_dialogue_ended(body):
-	body.set_physics_process(true)
