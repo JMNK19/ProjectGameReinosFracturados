@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=32 format=3 uid="uid://d2yyilylsb85d"]
+
 
 [ext_resource type="Script" path="res://scenes/levels/level_1/level_1.gd" id="1_7edsa"]
 [ext_resource type="Texture2D" uid="uid://du6sjywm7e3ey" path="res://assets/backgrounds/fondoLab.png" id="1_jx10p"]
@@ -19,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://cg5bvjxa3sgyi" path="res://assets/labAdicional/separacionLab.png" id="16_as5mc"]
 [ext_resource type="Texture2D" uid="uid://bnbrtpnxyneug" path="res://assets/labAdicional/led.png" id="17_8i0o8"]
 [ext_resource type="PackedScene" uid="uid://80dko8meh0bs" path="res://scenes/portal/portal_animado.tscn" id="18_ulp6d"]
+[ext_resource type="Resource" uid="uid://csnsm1kklmui3" path="res://scenes/dialogues/level_1/level1_asistente_inicio.dialogue" id="19_rm7t1"]
 [ext_resource type="AudioStream" uid="uid://cs2tpohv6lrmg" path="res://assets/sounds/wandering-6394.mp3" id="19_wqk0a"]
 [ext_resource type="PackedScene" uid="uid://dgkfdejdbpiys" path="res://scenes/levels/level_1/puertaLab.tscn" id="22_c7kp0"]
 [ext_resource type="PackedScene" uid="uid://dbsxpo5vkehjk" path="res://scenes/coleccionables/vida/pocion_vida.tscn" id="22_r377u"]
@@ -596,7 +599,7 @@ scale = Vector2(2, 2)
 position = Vector2(684, 529)
 
 [node name="MainCharacter" parent="." instance=ExtResource("3_sv86j")]
-position = Vector2(37, 535)
+position = Vector2(63, 541)
 max_jumps = 0
 
 [node name="Camera2D" parent="." node_paths=PackedStringArray("character") instance=ExtResource("4_tx36t")]
@@ -616,6 +619,8 @@ layer_0/tile_data = PackedInt32Array(1179649, 589824, 0, 1179648, 589824, 0, 117
 position = Vector2(751, 544)
 collision_layer = 2
 collision_mask = 2
+dialogue_resource = ExtResource("19_rm7t1")
+dialogue_start = "this_is_a_node_title"
 
 [node name="SeparacionLab" type="Sprite2D" parent="."]
 position = Vector2(647, 417)
