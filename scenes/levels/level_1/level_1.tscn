@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://2512ar4h41cn" path="res://assets/sounds/creatures.mp3" id="8_1bkac"]
 [ext_resource type="AudioStream" uid="uid://cab4agvhp44wx" path="res://assets/sounds/cap_azul.mp3" id="8_igx7s"]
 [ext_resource type="Texture2D" uid="uid://uxuogl2mrfci" path="res://assets/Objetos_Secundarios/Estante/Estante.png" id="8_s85y8"]
-[ext_resource type="PackedScene" uid="uid://dc5jtbhghdn71" path="res://scenes/capsula/Capsula.tscn" id="9_6rtje"]
+[ext_resource type="PackedScene" uid="uid://dc5jtbhghdn71" path="res://scenes/Capsula/Capsula.tscn" id="9_6rtje"]
 [ext_resource type="FontFile" uid="uid://dregmkvncw55k" path="res://assets/Font_Item_Inventario/press_Sstart_2p/PressStart2P-Regular.ttf" id="11_1oixs"]
 [ext_resource type="PackedScene" uid="uid://ppnitbtbnm4w" path="res://scenes/characters/asistente/asistente.tscn" id="13_a3fel"]
 [ext_resource type="Resource" uid="uid://c4dctk56u76el" path="res://scenes/dialogues/level_1/level1_asistente_portal_pistola.dialogue" id="14_7duda"]
@@ -433,6 +433,45 @@ _data = {
 "RESET": SubResource("Animation_jjcll")
 }
 
+[sub_resource type="Animation" id="Animation_4xm5s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.992157, 0.992157, 0.992157, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Capsulas:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pantallas:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_5xmpn"]
 resource_name = "portal_activado"
 length = 2.0
@@ -472,45 +511,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(0.00784314, 0.784314, 0.831373, 1), Color(0.337255, 0.176471, 0.886275, 1), Color(0.752941, 0.141176, 0.984314, 0.639216), Color(0.701961, 0, 0.196078, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_4xm5s"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer2:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.992157, 0.992157, 0.992157, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Capsulas:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Pantallas:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0r2s3"]
