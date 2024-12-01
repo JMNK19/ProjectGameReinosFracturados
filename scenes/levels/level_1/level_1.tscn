@@ -1,4 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://d2yyilylsb85d"]
+
+[gd_scene load_steps=32 format=3 uid="uid://d2yyilylsb85d"]
+
 
 [ext_resource type="Script" path="res://scenes/levels/level_1/level_1.gd" id="1_7edsa"]
 [ext_resource type="Texture2D" uid="uid://du6sjywm7e3ey" path="res://assets/backgrounds/fondoLab.png" id="1_jx10p"]
@@ -22,6 +24,8 @@
 [ext_resource type="Resource" uid="uid://csnsm1kklmui3" path="res://scenes/dialogues/level_1/level1_asistente_inicio.dialogue" id="19_rm7t1"]
 [ext_resource type="AudioStream" uid="uid://cs2tpohv6lrmg" path="res://assets/sounds/wandering-6394.mp3" id="19_wqk0a"]
 [ext_resource type="PackedScene" uid="uid://dgkfdejdbpiys" path="res://scenes/levels/level_1/puertaLab.tscn" id="22_c7kp0"]
+[ext_resource type="PackedScene" uid="uid://dbsxpo5vkehjk" path="res://scenes/coleccionables/vida/pocion_vida.tscn" id="22_r377u"]
+[ext_resource type="PackedScene" uid="uid://dj2g7im2a3nd1" path="res://scenes/coleccionables/municion/municion.tscn" id="23_kbniy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pjjtp"]
 texture = ExtResource("2_lwkc8")
@@ -430,7 +434,7 @@ _data = {
 "RESET": SubResource("Animation_jjcll")
 }
 
-[node name="level1" type="Node2D"]
+[node name="level1" type="Node2D" groups=["nivel"]]
 script = ExtResource("1_7edsa")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -527,21 +531,24 @@ offset_bottom = 462.0
 
 [node name="Label2" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = -37.0
-offset_top = -3.0
-offset_right = 123.0
-offset_bottom = 20.0
+offset_left = -54.0
+offset_top = -25.0
+offset_right = 106.0
+offset_bottom = -2.0
 theme_override_fonts/font = ExtResource("11_1oixs")
-text = "Movimiento"
+text = "Movimiento:"
 
 [node name="Label3" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = -69.0
-offset_top = 32.0
-offset_right = 155.0
-offset_bottom = 55.0
+offset_left = -62.0
+offset_top = 10.0
+offset_right = 114.0
+offset_bottom = 64.0
 theme_override_fonts/font = ExtResource("11_1oixs")
-text = "Flechas ← → y ↑"
+text = "     ↑
+    (W)
+←(A)   (D)→
+"
 
 [node name="Control2" type="Control" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -559,7 +566,7 @@ offset_top = -12.0
 offset_right = 35.0
 offset_bottom = 11.0
 theme_override_fonts/font = ExtResource("11_1oixs")
-text = "Ataque"
+text = "Ataque:"
 
 [node name="Label3" type="Label" parent="Control2"]
 layout_mode = 0
@@ -568,7 +575,7 @@ offset_top = 23.0
 offset_right = 45.0
 offset_bottom = 46.0
 theme_override_fonts/font = ExtResource("11_1oixs")
-text = "Tecla X"
+text = "Click izquierdo"
 
 [node name="Label4" type="Label" parent="."]
 offset_left = 687.0
@@ -602,7 +609,7 @@ limit_top = 50
 limit_right = 1500
 character = NodePath("../MainCharacter")
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." groups=["entorno"]]
 tile_set = SubResource("TileSet_jypmy")
 rendering_quadrant_size = 32
 format = 2
@@ -642,5 +649,14 @@ libraries = {
 libraries = {
 "": SubResource("AnimationLibrary_1arsv")
 }
+
+[node name="PocionVida" parent="." instance=ExtResource("22_r377u")]
+position = Vector2(294.009, 547.658)
+
+[node name="Municion" parent="." instance=ExtResource("23_kbniy")]
+position = Vector2(335.022, 548.365)
+
+[node name="Municion2" parent="." instance=ExtResource("23_kbniy")]
+position = Vector2(195.217, 543.736)
 
 [connection signal="animation_finished" from="AnimationPlayerControl" to="." method="_on_animation_player_control_animation_finished"]

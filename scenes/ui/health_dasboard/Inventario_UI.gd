@@ -12,7 +12,7 @@ func add_item(tipo, texture: CompressedTexture2D, cantidad: int):
 		var inventario_item = INVENTARIO_ITEM_UI.instantiate()
 		inventario_item.name = nombre_nodo
 		if(tipo == "pocionVida"):
-			tecla = "U"
+			tecla = "F"
 		else:
 			tecla = "R"
 		inventario_item.insertar(texture, cantidad, tecla)

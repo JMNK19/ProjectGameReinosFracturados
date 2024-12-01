@@ -11,12 +11,18 @@ var min_municion = 0
 var max_vida = 105
 var max_municion = 77
 
+var municion_disponible:bool = true
+
 var inventario = {}
 
 #Referenciamos la barra de vida
 @onready var barra_vida = $BarraVida/TextureProgressBar
 @onready var barra_municion = $BarraMunicion/TextureProgressBar
 @onready var audio_items = $AudioStreamPlayer2D
+
+const laser_sonido = preload("res://assets/sonido_laser/laser_01.mp3")
+const laser_sin_municion_sonido = preload("res://assets/sonido_laser/laser_sin_municion.mp3")
+const sin_municion_sonido = preload("res://assets/sonido_laser/sin_municion.mp3")
 
 const pocionVida_sonido = preload("res://assets/sonido_coleccionables/pocionVida.mp3")
 const municion_sonido = preload("res://assets/sonido_coleccionables/recargarPistolaLaser.mp3")
@@ -48,12 +54,31 @@ func add_municion(municion: int):
 	municion_actual += municion
 	if(municion_actual > max_municion):
 		municion_actual = max_municion
+	municion_disponible = true
 	set_municion_progreso(municion_actual)
 
 func remove_municion(municion: int):
+	
+	if(municion_actual > min_municion):
+		_play_sound(laser_sonido)
+		
 	municion_actual -= municion
-	if(municion_actual < 0):
+	
+	if(municion_actual < min_municion):
 		municion_actual = min_municion
+		_play_sound(laser_sin_municion_sonido)
+		municion_disponible = false
+	elif(municion_actual == min_municion):
+		var timer = Timer.new()
+		add_child(timer)  # Añadir el temporizador a la escena
+		timer.wait_time = 0.4  # Establecer el tiempo de espera (1 segundo)
+		timer.one_shot = true  # El temporizador se dispara solo una vez
+		timer.start()  # Iniciar el temporizador
+		
+		# Esperar a que termine el temporizador
+		await timer.timeout
+		_play_sound(sin_municion_sonido)
+		
 	set_municion_progreso(municion_actual)
 
 func set_municion_progreso(municion: int):
