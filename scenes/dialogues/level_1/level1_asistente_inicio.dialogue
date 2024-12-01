@@ -1,19 +1,17 @@
 ~ this_is_a_node_title
-Asistente: [[Hola|Bienvenido|Menos mal llegaste]], tengo nuevas noticias.
-Asistente: ¿Quieres que comience por la noticia mala o la buena?.
+Asistente: [[¡Hola Doctor!|Doctor, bienvenido|¡Doctor! Justo a tiempo.]] Tengo noticias emocionantes: ¡ambos proyectos están prácticamente terminados!
+Asistente: ¿De cuál quiere hablar primero?
 Cientifico: .
-- Buena noticia
-	Asistente: La buena noticia es que ya casi esta terminada la maquina dimensional.
-	Asistente: Y la mala noticia, es que no sabemos absolutamente nada de los peligros en otras dimensiones, es muy arriesgado continuar.
-- Mala noticia
-	Asistente: La mala noticia es que no sabemos absolutamente nada de los peligros en otras dimensiones, es muy arriesgado continuar.
-	Asistente: Y la buena noticia es que ya casi esta terminada la maquina dimensional.
+- "Quantum Lance" un arma futurita.
+	Asistente: Excelente elección. El Quantum Lance es… devastador. Emplea energía oscura para generar láseres. Pero si canalizamos su núcleo para niveles bajos de energía, también puede crear portales rudimentarios. No son estables, pero es algo.
+	Cientifico: Fascinante. ¿Qué hay de la máquina de portales multidimensionales?
+	Asistente: Precisamente, estaba a punto de enseñarle eso. Sígame, doctor.
+- "La máquina de portales multidimensionales"
+	Asistente: La máquina de portales. Usa energía traslúmina, que logramos sintetizar a partir de cristales de zeronio. Pero el portal aún es inestable, así que debemos mantener las pruebas cortas.
+	Asistente: Por otro lado. El Quantum Lance es… devastador. Emplea energía oscura para generar láseres. Pero si canalizamos su núcleo para niveles bajos de energía, también puede crear portales rudimentarios. No son estables, pero es algo.
+	Asistente: "¡Sígame, doctor! Justo ahora vamos a realizar la primera prueba de la máquina dimensional. Todo está preparado.
 	#- Start again => this_is_a_node_title
 #- End the conversation => END
-Asistente: ¿Quieres continuar?.
-Cientifico: .
-- Si continuemos, asumire los riesgos..
-	Asistente: Sigueme..
-- No, es muy arriesgado
+
 
 => END

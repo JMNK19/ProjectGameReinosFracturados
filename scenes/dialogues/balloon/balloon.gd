@@ -34,6 +34,8 @@ var dialogue_line: DialogueLine:
 		# The dialogue has finished so close the balloon
 		if not next_dialogue_line:
 			queue_free()
+			emit_signal("dialogue_ended")
+			#print("acabo")
 			return
 
 		# If the node isn't ready yet then none of the labels will be ready yet either
@@ -98,6 +100,7 @@ var dialogue_line: DialogueLine:
 ## The menu of responses
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
+var move=false
 
 func _ready() -> void:
 	balloon.hide()
@@ -134,10 +137,6 @@ func start(dialogue_resource: DialogueResource, title: String, extra_game_states
 ## Go to the next line
 func next(next_id: String) -> void:
 	self.dialogue_line = await resource.get_next_dialogue_line(next_id, temporary_game_states)
-	# Verificamos si no hay más diálogo
-	if not dialogue_line:
-		emit_signal("dialogue_ended")  # Emitir la señal de fin de diálogo
-		return
 
 #region Signals
 
@@ -191,5 +190,6 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
 
-
+func get_move() -> bool:
+	return move
 #endregion
