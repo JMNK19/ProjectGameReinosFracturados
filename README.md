@@ -1,3 +1,4 @@
+<span style="margin-left: 10px; font-size: 25px; color: #333; font-weight: bold;">Enlace jugable:</span>
 <a href="https://jeanmr.itch.io/reinos-fracturados" target="_blank">
   <button style="background: linear-gradient(to right, #ff7e5f, #feb47b); 
                 color: white; 
@@ -11,5 +12,4 @@
                 transition: all 0.3s ease-in-out;">
     Click para Jugar
   </button>
-  <span style="margin-left: 10px; font-size: 18px; color: #333; font-weight: bold;">Enlace jugable</span>
 </a>
