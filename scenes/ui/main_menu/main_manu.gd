@@ -6,7 +6,7 @@ func _ready():
 	HealthDasboard.visible=false
 
 func _on_jugar_pressed():
-	get_tree().change_scene_to_file("res://scenes/levels/level_1/level_1.tscn")
+	SceneTransition.change_scene("res://scenes/levels/level_1/level_1.tscn")
 	
 
 func _on_creditos_pressed():

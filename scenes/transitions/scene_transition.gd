@@ -29,6 +29,7 @@ func change_scene(target: String, show_menu = false):
 	# Mostramos animación (desde un color hacia transparente)
 	animation.play_backwards("dissolve")
 	# Esperamos a que termine la animación
+	#await get_tree().create_timer(0.8).timeout
 	await animation.animation_finished
 	animation.stop()
 	# Volvemos a ocultar el canvas

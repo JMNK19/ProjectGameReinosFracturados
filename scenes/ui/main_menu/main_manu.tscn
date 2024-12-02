@@ -221,6 +221,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Panel" type="Panel" parent="instrucciones"]
+layout_mode = 0
 offset_left = 99.0
 offset_top = 143.0
 offset_right = 1075.0
@@ -228,6 +229,7 @@ offset_bottom = 587.0
 theme = SubResource("Theme_nj8h8")
 
 [node name="TextEdit5" type="TextEdit" parent="instrucciones"]
+layout_mode = 0
 offset_left = 571.0
 offset_top = 437.0
 offset_right = 881.0
@@ -238,6 +240,7 @@ text = "Click izquierdo"
 editable = false
 
 [node name="TextEdit2" type="TextEdit" parent="instrucciones"]
+layout_mode = 0
 offset_left = 572.0
 offset_top = 264.0
 offset_right = 881.0
@@ -250,6 +253,7 @@ text = "	  ↑
 editable = false
 
 [node name="Label" type="Label" parent="instrucciones"]
+layout_mode = 0
 offset_left = 464.0
 offset_top = 181.0
 offset_right = 763.0
@@ -260,6 +264,7 @@ theme_override_font_sizes/font_size = 23
 text = "Instrucciones"
 
 [node name="Label2" type="Label" parent="instrucciones"]
+layout_mode = 0
 offset_left = 231.0
 offset_top = 308.0
 offset_right = 530.0
@@ -270,6 +275,7 @@ theme_override_font_sizes/font_size = 23
 text = "Movimientos:"
 
 [node name="Label3" type="Label" parent="instrucciones"]
+layout_mode = 0
 offset_left = 232.0
 offset_top = 446.0
 offset_right = 531.0
@@ -301,6 +307,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Panel" type="Panel" parent="creditos"]
+layout_mode = 0
 offset_left = 99.0
 offset_top = 143.0
 offset_right = 1075.0
@@ -308,6 +315,7 @@ offset_bottom = 587.0
 theme = SubResource("Theme_grvcn")
 
 [node name="TextEdit" type="TextEdit" parent="creditos"]
+layout_mode = 0
 offset_left = 171.0
 offset_top = 202.0
 offset_right = 412.0
@@ -318,6 +326,7 @@ text = "Gracias a"
 editable = false
 
 [node name="TextureRect2" type="TextureRect" parent="creditos"]
+layout_mode = 0
 offset_left = 158.0
 offset_top = 263.0
 offset_right = 437.0
@@ -326,6 +335,7 @@ texture = ExtResource("7_ajs42")
 expand_mode = 1
 
 [node name="TextEdit2" type="TextEdit" parent="creditos"]
+layout_mode = 0
 offset_left = 539.0
 offset_top = 174.0
 offset_right = 1043.0
@@ -339,6 +349,7 @@ text = "Creado por:
 editable = false
 
 [node name="TextureRect3" type="TextureRect" parent="creditos"]
+layout_mode = 0
 offset_left = 184.0
 offset_top = 454.0
 offset_right = 388.0
@@ -347,6 +358,7 @@ texture = ExtResource("8_bgodj")
 expand_mode = 1
 
 [node name="TextureRect4" type="TextureRect" parent="creditos"]
+layout_mode = 0
 offset_left = 720.0
 offset_top = 379.0
 offset_right = 884.0
@@ -371,6 +383,7 @@ text = "Atras"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="creditos"]
+layout_mode = 0
 offset_left = 177.0
 offset_top = 210.0
 offset_right = 476.0
@@ -381,6 +394,7 @@ theme_override_font_sizes/font_size = 23
 text = "Gracias a"
 
 [node name="Label4" type="Label" parent="creditos"]
+layout_mode = 0
 offset_left = 541.0
 offset_top = 186.0
 offset_right = 1036.0
