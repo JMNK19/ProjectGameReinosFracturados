@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://ci2j0tipkvjwk"]
+[gd_scene load_steps=10 format=3 uid="uid://ci2j0tipkvjwk"]
 
 [ext_resource type="Script" path="res://scenes/ui/main_menu/Credits.gd" id="1_ln4eo"]
 [ext_resource type="Texture2D" uid="uid://dc7dltowkl6n3" path="res://assets/Elementos Main Menu/Imagen de WhatsApp 2024-11-28 a las 22.11.01_f1eab93e.jpg" id="2_5ixob"]
 [ext_resource type="StyleBox" uid="uid://cheg8pjptscd4" path="res://assets/Elementos Main Menu/stylebuttomhover.tres" id="3_nytd7"]
 [ext_resource type="StyleBox" uid="uid://bh2oacc5ixf47" path="res://assets/Elementos Main Menu/stylebuttom.tres" id="4_pdxv8"]
 [ext_resource type="FontFile" uid="uid://dregmkvncw55k" path="res://assets/Font_Item_Inventario/press_Sstart_2p/PressStart2P-Regular.ttf" id="5_h4p5n"]
+[ext_resource type="FontFile" uid="uid://dregmkvncw55k" path="res://assets/fonts/press_Sstart_2p/PressStart2P-Regular.ttf" id="6_u2bpi"]
 
 [sub_resource type="Theme" id="Theme_gmja1"]
 default_font = ExtResource("5_h4p5n")
@@ -63,51 +64,61 @@ offset_right = 1075.0
 offset_bottom = 587.0
 theme = SubResource("Theme_w2ji4")
 
-[node name="TextEdit" type="TextEdit" parent="."]
-layout_mode = 0
-offset_left = 461.0
-offset_top = 174.0
-offset_right = 780.0
-offset_bottom = 217.0
-theme_override_fonts/font = ExtResource("5_h4p5n")
-theme_override_font_sizes/font_size = 23
-text = "Instrucciones"
-
 [node name="TextEdit5" type="TextEdit" parent="."]
-offset_left = 662.0
-offset_top = 388.0
-offset_right = 982.0
-offset_bottom = 485.0
+layout_mode = 0
+offset_left = 571.0
+offset_top = 437.0
+offset_right = 881.0
+offset_bottom = 474.0
 theme_override_fonts/font = ExtResource("5_h4p5n")
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 20
+text = "Click izquierdo"
+editable = false
 
 [node name="TextEdit2" type="TextEdit" parent="."]
-offset_left = 650.0
-offset_top = 266.0
-offset_right = 970.0
-offset_bottom = 363.0
+layout_mode = 0
+offset_left = 572.0
+offset_top = 264.0
+offset_right = 881.0
+offset_bottom = 361.0
 theme_override_fonts/font = ExtResource("5_h4p5n")
 theme_override_font_sizes/font_size = 23
 text = "	  ↑
 	 (W)
 ←(A)     (D)→"
+editable = false
 
-[node name="TextEdit3" type="TextEdit" parent="."]
-offset_left = 233.0
-offset_top = 295.0
-offset_right = 497.0
-offset_bottom = 338.0
-theme_override_fonts/font = ExtResource("5_h4p5n")
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 181.0
+offset_right = 763.0
+offset_bottom = 204.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_u2bpi")
 theme_override_font_sizes/font_size = 23
-text = "Movimientos"
+text = "Instrucciones"
 
-[node name="TextEdit4" type="TextEdit" parent="."]
-offset_left = 166.0
-offset_top = 418.0
-offset_right = 537.0
-offset_bottom = 461.0
-theme_override_fonts/font = ExtResource("5_h4p5n")
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 308.0
+offset_right = 530.0
+offset_bottom = 331.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_u2bpi")
 theme_override_font_sizes/font_size = 23
-text = "Mov. Especiales"
+text = "Movimientos:"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 446.0
+offset_right = 531.0
+offset_bottom = 469.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_u2bpi")
+theme_override_font_sizes/font_size = 23
+text = "Ataque:"
 
 [connection signal="pressed" from="TextureRect/Atras" to="." method="_on_atras_pressed"]

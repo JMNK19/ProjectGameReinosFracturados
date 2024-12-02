@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="GameReinosFracturados"
+run/main_scene="res://scenes/ui/splash/splash.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -18,6 +19,7 @@ config/icon="res://icon.svg"
 
 HealthDasboard="*res://scenes/ui/health_dasboard/health_dasboard.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+SceneTransition="*res://scenes/transitions/scene_transition.tscn"
 
 [dialogue_manager]
 
@@ -75,3 +77,4 @@ locale/translations_pot_files=PackedStringArray("res://scenes/dialogues/level_1/
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
