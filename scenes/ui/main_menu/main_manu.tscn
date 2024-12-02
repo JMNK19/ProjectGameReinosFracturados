@@ -1,3 +1,106 @@
-[gd_scene format=3 uid="uid://ccxglqgl32ffd"]
+[gd_scene load_steps=9 format=3 uid="uid://ccxglqgl32ffd"]
 
-[node name="MainManu" type="Node2D"]
+[ext_resource type="Script" path="res://scenes/ui/main_menu/main_manu.gd" id="1_6mv0v"]
+[ext_resource type="Texture2D" uid="uid://dc7dltowkl6n3" path="res://assets/Elementos Main Menu/Imagen de WhatsApp 2024-11-28 a las 22.11.01_f1eab93e.jpg" id="1_fycnp"]
+[ext_resource type="FontFile" uid="uid://dregmkvncw55k" path="res://assets/Font_Item_Inventario/press_Sstart_2p/PressStart2P-Regular.ttf" id="2_bg1jn"]
+[ext_resource type="StyleBox" uid="uid://cheg8pjptscd4" path="res://assets/Elementos Main Menu/stylebuttomhover.tres" id="3_nlc10"]
+[ext_resource type="StyleBox" uid="uid://bh2oacc5ixf47" path="res://assets/Elementos Main Menu/stylebuttom.tres" id="4_bi8oq"]
+
+[sub_resource type="Theme" id="Theme_kkgj7"]
+default_font = ExtResource("2_bg1jn")
+Button/fonts/font = ExtResource("2_bg1jn")
+Button/styles/focus = ExtResource("3_nlc10")
+Button/styles/hover = ExtResource("3_nlc10")
+Button/styles/normal = ExtResource("4_bi8oq")
+
+[sub_resource type="Theme" id="Theme_jr3qu"]
+default_font = ExtResource("2_bg1jn")
+default_font_size = 13
+Button/styles/focus = ExtResource("3_nlc10")
+Button/styles/hover = ExtResource("3_nlc10")
+Button/styles/normal = ExtResource("4_bi8oq")
+
+[sub_resource type="Theme" id="Theme_gmja1"]
+default_font = ExtResource("2_bg1jn")
+default_font_size = 13
+Button/styles/focus = ExtResource("3_nlc10")
+Button/styles/hover = ExtResource("3_nlc10")
+Button/styles/normal = ExtResource("4_bi8oq")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_6mv0v")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 29.175
+anchor_bottom = 16.375
+offset_bottom = -2.0
+texture = ExtResource("1_fycnp")
+expand_mode = 1
+
+[node name="Jugar" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.412
+anchor_top = 0.658
+anchor_right = 0.576
+anchor_bottom = 0.727
+offset_left = 3.19595
+offset_top = -1.67398
+offset_right = 2.80798
+offset_bottom = 1.13098
+theme = SubResource("Theme_kkgj7")
+text = "Jugar"
+
+[node name="Instrucciones" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.413
+anchor_top = 0.736
+anchor_right = 0.577
+anchor_bottom = 0.811
+offset_left = 2.02899
+offset_top = 3.39197
+offset_right = 1.64099
+offset_bottom = -1.73303
+theme = SubResource("Theme_jr3qu")
+text = "Instrucciones"
+
+[node name="Creditos" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.428
+anchor_top = 0.917
+anchor_right = 0.576
+anchor_bottom = 0.975
+offset_left = -13.476
+offset_top = -0.801025
+offset_right = -4.19202
+offset_bottom = 3.32501
+theme = SubResource("Theme_gmja1")
+text = "Creditos
+"
+
+[node name="Salir" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.423
+anchor_top = 0.826
+anchor_right = 0.571
+anchor_bottom = 0.894
+offset_left = -2.64102
+offset_top = 2.62195
+offset_right = 0.642944
+offset_bottom = 2.21796
+theme = SubResource("Theme_jr3qu")
+text = "Salir"
+
+[connection signal="pressed" from="TextureRect/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="TextureRect/Creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="TextureRect/Salir" to="." method="_on_salir_pressed"]

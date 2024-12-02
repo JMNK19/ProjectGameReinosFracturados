@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgkfdejdbpiys"]
+
+[ext_resource type="Script" path="res://scenes/levels/level_1/puertaLab.gd" id="1_emm8a"]
+[ext_resource type="Texture2D" uid="uid://ddqyml0gf7d5t" path="res://assets/labAdicional/puertaLab_abierta.png" id="2_bruqq"]
+[ext_resource type="AudioStream" uid="uid://dcsscnwcqdkf6" path="res://assets/sounds/access-granted.mp3" id="3_xk1l3"]
+[ext_resource type="FontFile" uid="uid://dregmkvncw55k" path="res://assets/fonts/press_Sstart_2p/PressStart2P-Regular.ttf" id="4_o8gq7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v2sh7"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bruqq")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1nhx"]
+size = Vector2(15, 87)
+
+[node name="PuertaLab" type="Area2D"]
+script = ExtResource("1_emm8a")
+
+[node name="puerta" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v2sh7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-29.5, 3.5)
+shape = SubResource("RectangleShape2D_i1nhx")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xk1l3")
+
+[node name="Restringido" type="Label" parent="."]
+offset_left = -229.0
+offset_top = -83.0
+offset_right = -57.0
+offset_bottom = -50.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.52549, 0.2, 0.976471, 1)
+theme_override_fonts/font = ExtResource("4_o8gq7")
+theme_override_font_sizes/font_size = 15
+text = "Acceso
+Restringido"
+horizontal_alignment = 1
+
+[node name="Concedido" type="Label" parent="."]
+visible = false
+offset_left = -223.0
+offset_top = -83.0
+offset_right = -51.0
+offset_bottom = -50.0
+theme_override_colors/font_color = Color(0.168627, 1, 0.482353, 1)
+theme_override_colors/font_shadow_color = Color(0.52549, 0.2, 0.976471, 1)
+theme_override_fonts/font = ExtResource("4_o8gq7")
+theme_override_font_sizes/font_size = 15
+text = "Acceso
+Concedido"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
