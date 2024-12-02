@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/camera/camera.gd" id="1_6v8ac"]
 
-[node name="Camera2D" type="Camera2D"]
+[node name="Camera2D" type="Camera2D" groups=["Camara"]]
 position = Vector2(363, 397)
 zoom = Vector2(1.75, 1.75)
 limit_left = -50

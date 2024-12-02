@@ -19,7 +19,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 func _on_body_entered(body):
 	if(body.is_in_group("enemy")): #verificamos si es un enemigo
-		body.hit(1) #llamamos a la función para hacer daño al enemigo
+		body.daño_control(1) #llamamos a la función para hacer daño al enemigo
 		animacion.play("explosion") #Animar explosion
 		can_move = false
 	elif(body.is_in_group("entorno")):
