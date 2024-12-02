@@ -101,8 +101,7 @@ text = "Creado por:
 - Gian Pool Alexander Vila Livias
 - Jeferson Renzo Aguilar Aguayo
 - Jose Carlos Pacheco Collantes
-- Jean Pierre Alejandro Medrano 
-  Rodriguez"
+- Jean Pierre Medrano Rodriguez"
 
 [node name="TextureRect3" type="TextureRect" parent="."]
 layout_mode = 0
