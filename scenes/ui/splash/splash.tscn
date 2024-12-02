@@ -5,6 +5,21 @@
 [ext_resource type="Texture2D" uid="uid://brdebbrv3budc" path="res://assets/logo-Endless.png" id="3_g3n3v"]
 [ext_resource type="Texture2D" uid="uid://dbubsuccbtvbi" path="res://assets/utpColor.png" id="5_ts2nm"]
 
+[sub_resource type="Animation" id="Animation_dqmsw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo-endless:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_fbkl4"]
 resource_name = "do_splash"
 length = 4.0
@@ -21,12 +36,18 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_dqmsw"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6vsfq"]
+_data = {
+"RESET": SubResource("Animation_dqmsw"),
+"do_splash": SubResource("Animation_fbkl4")
+}
+
+[sub_resource type="Animation" id="Animation_mad2k"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Logo-endless:modulate")
+tracks/0/path = NodePath("Logo:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -34,12 +55,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6vsfq"]
-_data = {
-"RESET": SubResource("Animation_dqmsw"),
-"do_splash": SubResource("Animation_fbkl4")
 }
 
 [sub_resource type="Animation" id="Animation_kc4n4"]
@@ -58,12 +73,18 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_mad2k"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tmoap"]
+_data = {
+"RESET": SubResource("Animation_mad2k"),
+"do_splash": SubResource("Animation_kc4n4")
+}
+
+[sub_resource type="Animation" id="Animation_spst1"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Logo:modulate")
+tracks/0/path = NodePath("UtpColor:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -71,12 +92,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_tmoap"]
-_data = {
-"RESET": SubResource("Animation_mad2k"),
-"do_splash": SubResource("Animation_kc4n4")
 }
 
 [sub_resource type="Animation" id="Animation_ggoj7"]
@@ -93,21 +108,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_spst1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("UtpColor:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l05i6"]

@@ -268,22 +268,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4yu2s"]
 size = Vector2(26, 58)
 
-[sub_resource type="Animation" id="Animation_e554r"]
-resource_name = "hit"
-length = 0.9
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.1, 0.1, 0.3, 0.5, 0.7, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(100, 100, 100, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(100, 100, 100, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_5l6bd"]
 length = 0.001
 tracks/0/type = "value"
@@ -315,6 +299,22 @@ tracks/0/keys = {
 "values": [Color(100, 100, 100, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(100, 100, 100, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_e554r"]
+resource_name = "hit"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.1, 0.1, 0.3, 0.5, 0.7, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(100, 100, 100, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(100, 100, 100, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4qwgu"]
 _data = {
 "RESET": SubResource("Animation_5l6bd"),
@@ -323,6 +323,7 @@ _data = {
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
+collision_mask = 3
 script = ExtResource("1_ctlol")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

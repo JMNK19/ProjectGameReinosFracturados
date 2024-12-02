@@ -2,6 +2,7 @@ extends CanvasLayer
 
 signal item_added(item, cantidad:int)
 signal item_consumed(tipo, cantidad:int)
+signal restart_inventario()
 
 # Variable (públicas) de vida y puntuación
 var vida_actual = 105 # Variable para menejo de vida (105 -> 100%)
@@ -11,6 +12,8 @@ var min_municion = 0
 var max_vida = 105
 var max_municion = 77
 
+var cristales = 0
+
 var municion_disponible:bool = true
 
 var inventario = {}
@@ -19,6 +22,8 @@ var inventario = {}
 @onready var barra_vida = $BarraVida/TextureProgressBar
 @onready var barra_municion = $BarraMunicion/TextureProgressBar
 @onready var audio_items = $AudioStreamPlayer2D
+@onready var cantidad_cristales_label = $Coleccionables/Label
+
 
 const laser_sonido = preload("res://assets/sonido_laser/laser_01.mp3")
 const laser_sin_municion_sonido = preload("res://assets/sonido_laser/laser_sin_municion.mp3")
@@ -113,3 +118,15 @@ func _play_sound(sound):
 	# Reproducimos el sonido
 	audio_items.stream = sound
 	audio_items.play()
+
+func restart():
+	vida_actual = max_vida
+	set_vida_progreso(vida_actual)
+	municion_actual = max_municion
+	set_municion_progreso(municion_actual)
+	inventario = {}
+	restart_inventario.emit()
+
+
+func actualizar_cristales():
+	cantidad_cristales_label.text = str(cristales)

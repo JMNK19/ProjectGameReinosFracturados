@@ -35,3 +35,10 @@ func _on_canvas_layer_item_consumed(tipo, cantidad):
 			nodo_existente.actualizar(cantidad)
 		else:
 			nodo_existente.queue_free()
+
+func eliminar_inventario():
+	for child in contenedor.get_children():
+		child.queue_free()
+
+func _on_canvas_layer_restart_inventario():
+	eliminar_inventario()

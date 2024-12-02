@@ -114,7 +114,7 @@ func _on_audio_stream_player_2d_finished():
 		# Qitamos al personaje principal de la excena
 		queue_free()
 		# Reiniciamos el juego despues de 2 segundos
-		#SceneTransition.reload_scene()
+		SceneTransition.reload_scene()
 
 func disparar_control():
 	var laser = disparo.instantiate()

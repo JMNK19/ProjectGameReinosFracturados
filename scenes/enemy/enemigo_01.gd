@@ -38,11 +38,11 @@ func _ready():
 		cambiar_posicion()
 
 func cambiar_posicion():
-	posicion_puntero.position *= -1
-	posicion_patrulla.position *= -1
-	puntero_patrulla.target_position *= -1
-	posicion_pared.position *= -1
-	puntero_pared.target_position *= -1
+	posicion_puntero.position.x *= -1
+	posicion_patrulla.position.x *= -1
+	puntero_patrulla.target_position.x *= -1
+	posicion_pared.position.x *= -1
+	puntero_pared.target_position.x *= -1
 
 func _process(delta):
 	# Solo si el personaje se puede mover, llamamos a su función que se encarga del movimiento
