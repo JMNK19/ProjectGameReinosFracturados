@@ -1,28 +1,21 @@
-[gd_scene load_steps=13 format=3 uid="uid://dwq42tyra3v5o"]
+[gd_scene load_steps=20 format=3 uid="uid://dwq42tyra3v5o"]
 
 [ext_resource type="Texture2D" uid="uid://c8txon6xyxm3s" path="res://assets/enemy/enemy_1/Enemigo-C1.png" id="1_037gn"]
 [ext_resource type="Script" path="res://scenes/enemy/enemigo_01.gd" id="1_yqi3v"]
 [ext_resource type="Texture2D" uid="uid://djwh7a3sms72p" path="res://assets/enemy/enemy_1/Enemigo-C2.png" id="2_i1m6j"]
 [ext_resource type="Texture2D" uid="uid://cnvwseukuhiue" path="res://assets/enemy/enemy_1/Enemigo-C3.png" id="3_htvlf"]
+[ext_resource type="Texture2D" uid="uid://bdfh10ltxgc0r" path="res://assets/enemy/enemy_1/dead/Enemigo1-Dead_1.png" id="3_op8yo"]
 [ext_resource type="Texture2D" uid="uid://cuv342emqaoq4" path="res://assets/enemy/enemy_1/Enemigo-C4.png" id="4_a8t4f"]
+[ext_resource type="Texture2D" uid="uid://b8hedwm4t0dfn" path="res://assets/enemy/enemy_1/dead/Enemigo1-Dead_2.png" id="4_vdlqp"]
 [ext_resource type="Texture2D" uid="uid://bxdy6bo2tmots" path="res://assets/enemy/enemy_1/Enemigo-C5.png" id="5_vw4qj"]
+[ext_resource type="Texture2D" uid="uid://claf5b1bwxfvi" path="res://assets/enemy/enemy_1/dead/Enemigo1-Dead_3.png" id="5_wfuad"]
+[ext_resource type="Texture2D" uid="uid://b2ny3ley4sctk" path="res://assets/enemy/enemy_1/dead/Enemigo1-Dead_4.png" id="6_jdnb7"]
+[ext_resource type="Texture2D" uid="uid://bbe04dysfdymt" path="res://assets/enemy/enemy_1/dead/Enemigo1-Dead_5.png" id="7_jbfwc"]
+[ext_resource type="Texture2D" uid="uid://1d1vigp7foj1" path="res://assets/enemy/enemy_1/dead/Enemigo1-Dead_6.png" id="8_gloya"]
 
-[sub_resource type="Animation" id="Animation_1mq7h"]
-resource_name = "run"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("1_037gn"), ExtResource("2_i1m6j"), ExtResource("3_htvlf"), ExtResource("4_a8t4f"), ExtResource("5_vw4qj")]
-}
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7w1li"]
+radius = 11.0
+height = 56.0
 
 [sub_resource type="Animation" id="Animation_3b5k8"]
 length = 0.001
@@ -37,6 +30,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("1_037gn")]
+}
+
+[sub_resource type="Animation" id="Animation_i5s8f"]
+resource_name = "dead"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.5, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_op8yo"), ExtResource("4_vdlqp"), ExtResource("5_wfuad"), ExtResource("6_jdnb7"), ExtResource("7_jbfwc"), ExtResource("8_gloya")]
 }
 
 [sub_resource type="Animation" id="Animation_8wi2e"]
@@ -55,20 +64,21 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(0.980392, 0.454902, 0.611765, 1), Color(0.67451, 0.0823529, 0.329412, 1), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_i5s8f"]
-resource_name = "dead"
+[sub_resource type="Animation" id="Animation_1mq7h"]
+resource_name = "run"
 length = 0.4
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_037gn"), ExtResource("2_i1m6j"), ExtResource("3_htvlf"), ExtResource("4_a8t4f"), ExtResource("5_vw4qj")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rs6vi"]
@@ -79,24 +89,25 @@ _data = {
 "run": SubResource("Animation_1mq7h")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7w1li"]
-radius = 14.0
-height = 56.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kulxy"]
+radius = 13.0
+height = 58.0
 
 [node name="Robot" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 2
 script = ExtResource("1_yqi3v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_037gn")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 3)
+shape = SubResource("CapsuleShape2D_7w1li")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_rs6vi")
 }
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 3)
-shape = SubResource("CapsuleShape2D_7w1li")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(23.7337, -1.7297)
@@ -105,5 +116,25 @@ position = Vector2(23.7337, -1.7297)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 3)
+shape = SubResource("CapsuleShape2D_kulxy")
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(13.7977, -0.135395)
+
+[node name="RayCast2D" type="RayCast2D" parent="Marker2D2"]
+position = Vector2(0, -0.0417137)
+target_position = Vector2(70, 0)
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(13.6221, 12.7825)
+
+[node name="RayCast2D" type="RayCast2D" parent="Marker2D3"]
+target_position = Vector2(7, 0)
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -15,7 +15,6 @@ func _ready():
 	pass # Replace with function body.
 
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
@@ -35,5 +34,4 @@ func _on_area_2d_portal_activado_body_entered(body):
 func _on_area_2d_next_level_body_entered(body):
 	if body.is_in_group("player"):
 		HealthDasboard.visible=true
-		await get_tree().create_timer(2.0).timeout
-		get_tree().change_scene_to_file("res://scenes/levels/level_2/level_2.tscn")
+		SceneTransition.change_scene("res://scenes/levels/level_2/level_2.tscn")
