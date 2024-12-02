@@ -1,4 +1,6 @@
 extends Control
+@onready var instrucciones = $instrucciones
+@onready var creditos = $creditos
 
 func _ready():
 	HealthDasboard.visible=false
@@ -8,7 +10,8 @@ func _on_jugar_pressed():
 	
 
 func _on_creditos_pressed():
-	get_tree().change_scene_to_file("res://scenes/ui/main_menu/Credits.tscn")
+	creditos.visible=true
+	#get_tree().change_scene_to_file("res://scenes/ui/main_menu/Credits.tscn")
 	
 	
 func _on_salir_pressed():
@@ -16,4 +19,13 @@ func _on_salir_pressed():
 
 
 func _on_instrucciones_pressed():
-	get_tree().change_scene_to_file("res://scenes/ui/main_menu/Instrucciones.tscn")
+	instrucciones.visible=true
+	#get_tree().change_scene_to_file("res://scenes/ui/main_menu/Instrucciones.tscn")
+
+
+func _on_atras_pressed():
+	instrucciones.visible=false
+
+
+func _on_atras_creditos_pressed():
+	creditos.visible=false

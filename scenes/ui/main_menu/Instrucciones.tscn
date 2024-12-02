@@ -1,20 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://ci2j0tipkvjwk"]
+[gd_scene load_steps=9 format=3 uid="uid://ci2j0tipkvjwk"]
 
 [ext_resource type="Script" path="res://scenes/ui/main_menu/Credits.gd" id="1_ln4eo"]
 [ext_resource type="Texture2D" uid="uid://dc7dltowkl6n3" path="res://assets/Elementos Main Menu/Imagen de WhatsApp 2024-11-28 a las 22.11.01_f1eab93e.jpg" id="2_5ixob"]
 [ext_resource type="StyleBox" uid="uid://cheg8pjptscd4" path="res://assets/Elementos Main Menu/stylebuttomhover.tres" id="3_nytd7"]
 [ext_resource type="StyleBox" uid="uid://bh2oacc5ixf47" path="res://assets/Elementos Main Menu/stylebuttom.tres" id="4_pdxv8"]
-[ext_resource type="FontFile" uid="uid://dregmkvncw55k" path="res://assets/Font_Item_Inventario/press_Sstart_2p/PressStart2P-Regular.ttf" id="5_h4p5n"]
-[ext_resource type="FontFile" uid="uid://dregmkvncw55k" path="res://assets/fonts/press_Sstart_2p/PressStart2P-Regular.ttf" id="6_u2bpi"]
+[ext_resource type="FontFile" uid="uid://dregmkvncw55k" path="res://assets/Font_Item_Inventario/press_Sstart_2p/PressStart2P-Regular.ttf" id="6_u2bpi"]
 
 [sub_resource type="Theme" id="Theme_gmja1"]
-default_font = ExtResource("5_h4p5n")
+default_font = ExtResource("6_u2bpi")
 default_font_size = 13
 Button/styles/focus = ExtResource("3_nytd7")
 Button/styles/hover = ExtResource("3_nytd7")
 Button/styles/normal = ExtResource("4_pdxv8")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0k2ss"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qpdjp"]
 bg_color = Color(0.137255, 0.0745098, 0.301961, 1)
 border_width_left = 10
 border_width_top = 10
@@ -23,7 +22,7 @@ border_width_bottom = 10
 border_color = Color(0.8, 0.960784, 0.0901961, 1)
 
 [sub_resource type="Theme" id="Theme_w2ji4"]
-Panel/styles/panel = SubResource("StyleBoxFlat_0k2ss")
+Panel/styles/panel = SubResource("StyleBoxFlat_qpdjp")
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -34,6 +33,7 @@ script = ExtResource("1_ln4eo")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 29.175
@@ -70,7 +70,7 @@ offset_left = 571.0
 offset_top = 437.0
 offset_right = 881.0
 offset_bottom = 474.0
-theme_override_fonts/font = ExtResource("5_h4p5n")
+theme_override_fonts/font = ExtResource("6_u2bpi")
 theme_override_font_sizes/font_size = 20
 text = "Click izquierdo"
 editable = false
@@ -81,7 +81,7 @@ offset_left = 572.0
 offset_top = 264.0
 offset_right = 881.0
 offset_bottom = 361.0
-theme_override_fonts/font = ExtResource("5_h4p5n")
+theme_override_fonts/font = ExtResource("6_u2bpi")
 theme_override_font_sizes/font_size = 23
 text = "	  ↑
 	 (W)

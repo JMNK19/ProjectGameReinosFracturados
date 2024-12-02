@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ccxglqgl32ffd"]
+[gd_scene load_steps=22 format=3 uid="uid://ccxglqgl32ffd"]
 
 [ext_resource type="Script" path="res://scenes/ui/main_menu/main_manu.gd" id="1_6mv0v"]
 [ext_resource type="Texture2D" uid="uid://dc7dltowkl6n3" path="res://assets/Elementos Main Menu/Imagen de WhatsApp 2024-11-28 a las 22.11.01_f1eab93e.jpg" id="1_fycnp"]
@@ -6,6 +6,9 @@
 [ext_resource type="StyleBox" uid="uid://cheg8pjptscd4" path="res://assets/Elementos Main Menu/stylebuttomhover.tres" id="3_nlc10"]
 [ext_resource type="StyleBox" uid="uid://bh2oacc5ixf47" path="res://assets/Elementos Main Menu/stylebuttom.tres" id="4_bi8oq"]
 [ext_resource type="AudioStream" uid="uid://3ashvrmp1v1c" path="res://assets/sounds/main_menu.mp3" id="6_g5pgh"]
+[ext_resource type="Texture2D" uid="uid://wvkps7hujgo" path="res://assets/Elementos Main Menu/EndlessOS.png" id="7_ajs42"]
+[ext_resource type="Texture2D" uid="uid://bjghvobgf3dab" path="res://assets/Elementos Main Menu/UTP.jpg" id="8_bgodj"]
+[ext_resource type="Texture2D" uid="uid://dy7plg7b6hlgl" path="res://assets/Elementos Main Menu/studioindie.png" id="9_ywume"]
 
 [sub_resource type="Theme" id="Theme_kkgj7"]
 default_font = ExtResource("2_bg1jn")
@@ -89,6 +92,42 @@ _data = {
 "RESET": SubResource("Animation_fwupq"),
 "fondo": SubResource("Animation_agkqh")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0k2ss"]
+bg_color = Color(0.137255, 0.0745098, 0.301961, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.8, 0.960784, 0.0901961, 1)
+
+[sub_resource type="Theme" id="Theme_nj8h8"]
+Panel/styles/panel = SubResource("StyleBoxFlat_0k2ss")
+
+[sub_resource type="Theme" id="Theme_p06jl"]
+default_font = ExtResource("2_bg1jn")
+default_font_size = 13
+Button/styles/focus = ExtResource("3_nlc10")
+Button/styles/hover = ExtResource("3_nlc10")
+Button/styles/normal = ExtResource("4_bi8oq")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_afgwg"]
+bg_color = Color(0.137255, 0.0745098, 0.301961, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.8, 0.960784, 0.0901961, 1)
+
+[sub_resource type="Theme" id="Theme_grvcn"]
+Panel/styles/panel = SubResource("StyleBoxFlat_afgwg")
+
+[sub_resource type="Theme" id="Theme_xe221"]
+default_font = ExtResource("2_bg1jn")
+default_font_size = 13
+Button/styles/focus = ExtResource("3_nlc10")
+Button/styles/hover = ExtResource("3_nlc10")
+Button/styles/normal = ExtResource("4_bi8oq")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -175,7 +214,195 @@ libraries = {
 }
 autoplay = "fondo"
 
+[node name="instrucciones" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="instrucciones"]
+offset_left = 99.0
+offset_top = 143.0
+offset_right = 1075.0
+offset_bottom = 587.0
+theme = SubResource("Theme_nj8h8")
+
+[node name="TextEdit5" type="TextEdit" parent="instrucciones"]
+offset_left = 571.0
+offset_top = 437.0
+offset_right = 881.0
+offset_bottom = 474.0
+theme_override_fonts/font = ExtResource("2_bg1jn")
+theme_override_font_sizes/font_size = 20
+text = "Click izquierdo"
+editable = false
+
+[node name="TextEdit2" type="TextEdit" parent="instrucciones"]
+offset_left = 572.0
+offset_top = 264.0
+offset_right = 881.0
+offset_bottom = 361.0
+theme_override_fonts/font = ExtResource("2_bg1jn")
+theme_override_font_sizes/font_size = 23
+text = "	  ↑
+	 (W)
+←(A)     (D)→"
+editable = false
+
+[node name="Label" type="Label" parent="instrucciones"]
+offset_left = 464.0
+offset_top = 181.0
+offset_right = 763.0
+offset_bottom = 204.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_bg1jn")
+theme_override_font_sizes/font_size = 23
+text = "Instrucciones"
+
+[node name="Label2" type="Label" parent="instrucciones"]
+offset_left = 231.0
+offset_top = 308.0
+offset_right = 530.0
+offset_bottom = 331.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_bg1jn")
+theme_override_font_sizes/font_size = 23
+text = "Movimientos:"
+
+[node name="Label3" type="Label" parent="instrucciones"]
+offset_left = 232.0
+offset_top = 446.0
+offset_right = 531.0
+offset_bottom = 469.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_bg1jn")
+theme_override_font_sizes/font_size = 23
+text = "Ataque:"
+
+[node name="AtrasInstrucciones" type="Button" parent="instrucciones"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.428
+anchor_top = 0.917
+anchor_right = 0.576
+anchor_bottom = 0.975
+offset_left = 98.88
+offset_top = 124.32
+offset_right = 192.96
+offset_bottom = 152.0
+theme = SubResource("Theme_p06jl")
+theme_override_font_sizes/font_size = 20
+text = "Atras"
+
+[node name="creditos" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="creditos"]
+offset_left = 99.0
+offset_top = 143.0
+offset_right = 1075.0
+offset_bottom = 587.0
+theme = SubResource("Theme_grvcn")
+
+[node name="TextEdit" type="TextEdit" parent="creditos"]
+offset_left = 171.0
+offset_top = 202.0
+offset_right = 412.0
+offset_bottom = 245.0
+theme_override_fonts/font = ExtResource("2_bg1jn")
+theme_override_font_sizes/font_size = 23
+text = "Gracias a"
+editable = false
+
+[node name="TextureRect2" type="TextureRect" parent="creditos"]
+offset_left = 158.0
+offset_top = 263.0
+offset_right = 437.0
+offset_bottom = 430.0
+texture = ExtResource("7_ajs42")
+expand_mode = 1
+
+[node name="TextEdit2" type="TextEdit" parent="creditos"]
+offset_left = 539.0
+offset_top = 174.0
+offset_right = 1043.0
+offset_bottom = 554.0
+theme_override_constants/line_spacing = 12
+theme_override_fonts/font = ExtResource("2_bg1jn")
+theme_override_font_sizes/font_size = 15
+text = "Creado por:
+
+"
+editable = false
+
+[node name="TextureRect3" type="TextureRect" parent="creditos"]
+offset_left = 184.0
+offset_top = 454.0
+offset_right = 388.0
+offset_bottom = 522.0
+texture = ExtResource("8_bgodj")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="creditos"]
+offset_left = 720.0
+offset_top = 379.0
+offset_right = 884.0
+offset_bottom = 535.0
+texture = ExtResource("9_ywume")
+expand_mode = 1
+
+[node name="AtrasCreditos" type="Button" parent="creditos"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.3369
+anchor_top = 4.02003
+anchor_right = 4.7298
+anchor_bottom = 4.49187
+offset_left = -13.476
+offset_top = -0.801025
+offset_right = -4.19202
+offset_bottom = 3.32501
+theme = SubResource("Theme_xe221")
+theme_override_font_sizes/font_size = 20
+text = "Atras"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="creditos"]
+offset_left = 177.0
+offset_top = 210.0
+offset_right = 476.0
+offset_bottom = 233.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_bg1jn")
+theme_override_font_sizes/font_size = 23
+text = "Gracias a"
+
+[node name="Label4" type="Label" parent="creditos"]
+offset_left = 541.0
+offset_top = 186.0
+offset_right = 1036.0
+offset_bottom = 371.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_bg1jn")
+theme_override_font_sizes/font_size = 15
+text = "Creado por:
+
+
+- Gian Pool Alexander Vila Livias
+
+- Jeferson Renzo Aguilar Aguayo
+
+- Jose Carlos Pacheco Collantes
+
+- Jean Pierre Alejandro Medrano 
+  Rodriguez"
+
 [connection signal="pressed" from="TextureRect/Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="TextureRect/Instrucciones" to="." method="_on_instrucciones_pressed"]
 [connection signal="pressed" from="TextureRect/Creditos" to="." method="_on_creditos_pressed"]
 [connection signal="pressed" from="TextureRect/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="instrucciones/AtrasInstrucciones" to="." method="_on_atras_pressed"]
+[connection signal="pressed" from="creditos/AtrasCreditos" to="." method="_on_atras_creditos_pressed"]

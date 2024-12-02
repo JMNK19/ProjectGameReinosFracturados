@@ -16,7 +16,7 @@ Button/styles/focus = ExtResource("4_i7al2")
 Button/styles/hover = ExtResource("4_i7al2")
 Button/styles/normal = ExtResource("5_7d67x")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0k2ss"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnqbx"]
 bg_color = Color(0.137255, 0.0745098, 0.301961, 1)
 border_width_left = 10
 border_width_top = 10
@@ -25,7 +25,7 @@ border_width_bottom = 10
 border_color = Color(0.8, 0.960784, 0.0901961, 1)
 
 [sub_resource type="Theme" id="Theme_w2ji4"]
-Panel/styles/panel = SubResource("StyleBoxFlat_0k2ss")
+Panel/styles/panel = SubResource("StyleBoxFlat_vnqbx")
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -67,7 +67,6 @@ offset_top = 143.0
 offset_right = 1075.0
 offset_bottom = 587.0
 theme = SubResource("Theme_w2ji4")
-metadata/_edit_use_anchors_ = true
 
 [node name="TextEdit" type="TextEdit" parent="."]
 layout_mode = 0
