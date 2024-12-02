@@ -4,8 +4,8 @@ signal item_added(item, cantidad:int)
 signal item_consumed(tipo, cantidad:int)
 
 # Variable (públicas) de vida y puntuación
-var vida_actual = 0 # Variable para menejo de vida
-var municion_actual = 0 # Variable para manejo de la munición
+var vida_actual = 105 # Variable para menejo de vida (105 -> 100%)
+var municion_actual = 77 # Variable para manejo de la munición (77 -> 100%)
 var min_vida = 0
 var min_municion = 0
 var max_vida = 105

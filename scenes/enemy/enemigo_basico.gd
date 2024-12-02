@@ -1,14 +1,12 @@
 extends CharacterBody2D
 #Referenciamos a la camara del nivel
+class_name basic_enemy
 
 const GRAVEDAD = 16
-
-@export var speed: int = 50
-@export var min_velocidad: int = 50
-@export var max_velocidad: int = 100
+@export var velocidad: int = 48
 
 @export var vida: int = 4
-@export var daño_ataque: int = 20
+@export var daño_ataque: int = 5
 
 @onready var can_move: bool = true
 
@@ -16,12 +14,6 @@ const GRAVEDAD = 16
 @onready var imagen = $Sprite2D
 @onready var puntero_abajo = $Marker2D/RayCast2D
 @onready var posicion_puntero = $Marker2D
-@onready var puntero_patrulla = $Marker2D2/RayCast2D
-@onready var posicion_patrulla = $Marker2D2
-@onready var puntero_pared = $Marker2D3/RayCast2D
-@onready var posicion_pared = $Marker2D3
-
-
 
 # Definir enum con las opciones y valores
 enum Direccion {
@@ -34,37 +26,24 @@ enum Direccion {
 
 func _ready():
 	animacion.play("run")
-	if(direccion == -1):
-		cambiar_posicion()
-
-func cambiar_posicion():
-	posicion_puntero.position *= -1
-	posicion_patrulla.position *= -1
-	puntero_patrulla.target_position *= -1
-	posicion_pared.position *= -1
-	puntero_pared.target_position *= -1
 
 func _process(delta):
 	# Solo si el personaje se puede mover, llamamos a su función que se encarga del movimiento
 	if(can_move):
 		movimiento_control(delta)
-		patrulla_control()
 
 func movimiento_control(delta):
 	if(direccion > 0):
 		imagen.flip_h = false
 	elif(direccion < 0):
 		imagen.flip_h = true
-	if(puntero_pared.is_colliding()):
-		if(puntero_pared.get_collider().is_in_group("entorno")):
-			direccion *= -1
-			cambiar_posicion()
-	if(not puntero_abajo.is_colliding()):
+	
+	if(is_on_wall() or not puntero_abajo.is_colliding()):
 		direccion *= -1
-		cambiar_posicion()
-	# Actualizar speed
+		posicion_puntero.position *= -1
+	# Actualizar velocidad
 	velocity.y += GRAVEDAD * delta  # Aplica la gravedad
-	velocity.x = speed * direccion  # Movimiento horizontal
+	velocity.x = velocidad * direccion  # Movimiento horizontal
 	
 	# Aplicar movimiento
 	move_and_slide()
@@ -77,14 +56,6 @@ func daño_control(daño: int):
 	else:
 		animacion.play("dead")
 
-func patrulla_control():
-	if(puntero_patrulla.is_colliding()):
-		if(puntero_patrulla.get_collider().is_in_group("player")):
-			speed = max_velocidad
-		else:
-			speed = min_velocidad
-	else:
-		speed = min_velocidad
 
 func _on_animation_player_animation_started(anim_name):
 	match anim_name:
@@ -105,8 +76,3 @@ func _on_animation_player_animation_finished(anim_name):
 				animacion.play("dead")
 		"dead":
 			queue_free()
-
-
-func _on_area_2d_body_entered(body):
-	if(body.is_in_group("player")):
-		body.daño_control(daño_ataque)

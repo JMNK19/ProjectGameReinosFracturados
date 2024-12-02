@@ -2,18 +2,22 @@ extends CharacterBody2D
 
 @export var gravity = 650
 @export var jump_speed = 250
-@export var speed = 100
+@export var speed = 130
 @export var max_jumps = 2 # Número máximo de saltos permitidos
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var audio_player= $AudioStreamPlayer2D
 @onready var disparo_timer = $Timer
+@onready var animation_player = $AnimationPlayer
+
+
 
 #Escena del disparo
 const disparo = preload("res://scenes/characters/main_character/Disparo/disparo.tscn")
+const daño_cientifico_sonido = preload("res://assets/sounds/daño_cientifico.mp3")
+const game_over_sonido = preload("res://assets/sounds/game_over.mp3")
 
 # Variable para controlar si el jugador puede disparar
 var can_shoot = true
-
 var Stop_enabled = false
 
 var _current_movement = "idle"
@@ -21,6 +25,9 @@ var jump_count = 0 # Contador de saltos
 var _run_sound = preload("res://assets/sounds/walking1.mp3")
 
 var is_walking_sound_playing = false
+
+var inmunidad: bool = false
+var dead: bool = false
 
 func _ready():
 	animated_sprite_2d.play("idle_with_arma")
@@ -30,6 +37,9 @@ func _process(delta):
 	stop_character()
 
 func _physics_process(delta):
+	if(dead):
+		
+		return
 	# Horizontal
 	var direction = Input.get_axis("izquierda", "derecha")
 	velocity.x = speed * direction
@@ -78,7 +88,9 @@ func _physics_process(delta):
 	if not is_on_floor() and velocity.y > 0 and _current_movement != "fall":
 		_current_movement = "fall"
 		animated_sprite_2d.play("fall")
-
+	
+	if dead: # Si el personaje murió, no se podrá mover en el eje X
+		velocity.x = 0
 	move_and_slide()
 
 func _unhandled_input(event):
@@ -98,7 +110,11 @@ func _unhandled_input(event):
 
 
 func _on_audio_stream_player_2d_finished():
-	pass # Replace with function body.
+	if audio_player.stream == game_over_sonido:
+		# Qitamos al personaje principal de la excena
+		queue_free()
+		# Reiniciamos el juego despues de 2 segundos
+		#SceneTransition.reload_scene()
 
 func disparar_control():
 	var laser = disparo.instantiate()
@@ -114,6 +130,17 @@ func disparar_control():
 	
 	get_tree().call_group("nivel", "add_child", laser)
 
+func daño_control(daño:int):
+	if(inmunidad == false):
+		HealthDasboard.remove_vida(daño)
+		if(HealthDasboard.vida_actual>0):
+			_play_sound(daño_cientifico_sonido)
+			animation_player.play("hit")
+			inmunidad = true
+			speed = 150
+		else:
+			dead = true
+			animation_player.play("dead")
 
 func _play_sound(sound):
 	# Pausamos el sonido
@@ -133,3 +160,16 @@ func stop_character():
 func _on_timer_disparo_permitido():
 	# Esta función es llamada cuando el temporizador finaliza
 	can_shoot = true  # Permitir disparar nuevamente
+
+
+func _on_animation_player_animation_finished(anim_name):
+	match anim_name:
+		"hit":
+			speed = 130
+			inmunidad = false
+
+
+func _on_animation_player_animation_started(anim_name):
+	match anim_name:
+		"dead":
+			_play_sound(game_over_sonido)

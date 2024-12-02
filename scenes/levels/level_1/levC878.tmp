@@ -693,6 +693,10 @@ position = Vector2(684, 529)
 
 [node name="MainCharacter" parent="." instance=ExtResource("3_sv86j")]
 position = Vector2(528.067, 537.781)
+gravity = 650
+jump_speed = 250
+speed = 130
+max_jumps = 0
 
 [node name="Camera2D" parent="." node_paths=PackedStringArray("character") instance=ExtResource("4_tx36t")]
 position = Vector2(316, 879)

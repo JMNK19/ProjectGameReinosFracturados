@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://by37xo6l3hgfa"]
+
+[ext_resource type="Texture2D" uid="uid://brj1yoyisjtfw" path="res://assets/cientifico/cientifico64x64_jump.png" id="1_qghkm"]
+
+[resource]
+atlas = ExtResource("1_qghkm")
+region = Rect2(192, 0, 64, 64)
