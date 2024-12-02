@@ -1,0 +1,156 @@
+[gd_scene load_steps=14 format=3 uid="uid://cvb2hl18q286b"]
+
+[ext_resource type="Script" path="res://scenes/ui/splash/splash.gd" id="1_roa58"]
+[ext_resource type="Texture2D" uid="uid://dch1pe1tiwg7x" path="res://assets/logo.png" id="2_p17l1"]
+[ext_resource type="Texture2D" uid="uid://brdebbrv3budc" path="res://assets/logo-Endless.png" id="3_g3n3v"]
+[ext_resource type="Texture2D" uid="uid://dbubsuccbtvbi" path="res://assets/utpColor.png" id="5_ts2nm"]
+
+[sub_resource type="Animation" id="Animation_fbkl4"]
+resource_name = "do_splash"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo-endless:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dqmsw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo-endless:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6vsfq"]
+_data = {
+"RESET": SubResource("Animation_dqmsw"),
+"do_splash": SubResource("Animation_fbkl4")
+}
+
+[sub_resource type="Animation" id="Animation_kc4n4"]
+resource_name = "do_splash"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mad2k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tmoap"]
+_data = {
+"RESET": SubResource("Animation_mad2k"),
+"do_splash": SubResource("Animation_kc4n4")
+}
+
+[sub_resource type="Animation" id="Animation_ggoj7"]
+resource_name = "do_splash"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UtpColor:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_spst1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UtpColor:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l05i6"]
+_data = {
+"RESET": SubResource("Animation_spst1"),
+"do_splash": SubResource("Animation_ggoj7")
+}
+
+[node name="Splash" type="Node2D"]
+script = ExtResource("1_roa58")
+
+[node name="Logo-endless" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(585, 320)
+texture = ExtResource("3_g3n3v")
+
+[node name="Logo" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(562, 320)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_p17l1")
+
+[node name="UtpColor" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(603, 325)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_ts2nm")
+
+[node name="AnimationPlayerEndless" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6vsfq")
+}
+
+[node name="AnimationPlayerStudio" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tmoap")
+}
+
+[node name="AnimationPlayerUtp" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_l05i6")
+}
+
+[connection signal="animation_finished" from="AnimationPlayerEndless" to="." method="_on_animation_player_endless_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayerStudio" to="." method="_on_animation_player_studio_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayerUtp" to="." method="_on_animation_player_utp_animation_finished"]
