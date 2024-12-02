@@ -76,7 +76,7 @@ size = Vector2(26, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pf8k0"]
 
-[node name="Asistente" type="CharacterBody2D"]
+[node name="Asistente" type="CharacterBody2D" groups=["asistente"]]
 script = ExtResource("1_j0bgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

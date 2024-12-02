@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/levels/level_1/puertaLab.gd" id="1_emm8a"]
 [ext_resource type="Texture2D" uid="uid://ddqyml0gf7d5t" path="res://assets/labAdicional/puertaLab_abierta.png" id="2_bruqq"]
 [ext_resource type="AudioStream" uid="uid://dcsscnwcqdkf6" path="res://assets/sounds/access-granted.mp3" id="3_xk1l3"]
-[ext_resource type="FontFile" uid="uid://dregmkvncw55k" path="res://assets/fonts/press_Sstart_2p/PressStart2P-Regular.ttf" id="4_o8gq7"]
+[ext_resource type="FontFile" uid="uid://dregmkvncw55k" path="res://assets/Font_Item_Inventario/press_Sstart_2p/PressStart2P-Regular.ttf" id="4_o8gq7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v2sh7"]
 animations = [{

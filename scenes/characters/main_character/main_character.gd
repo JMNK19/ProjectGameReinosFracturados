@@ -14,7 +14,7 @@ const disparo = preload("res://scenes/characters/main_character/Disparo/disparo.
 # Variable para controlar si el jugador puede disparar
 var can_shoot = true
 
-var Door = false
+var Stop_enabled = false
 
 var _current_movement = "idle"
 var jump_count = 0 # Contador de saltos
@@ -27,7 +27,7 @@ func _ready():
 
 #Actualmente uso esta funcion para la puerta del laboratorio
 func _process(delta):
-	Open_Door()
+	stop_character()
 
 func _physics_process(delta):
 	# Horizontal
@@ -122,9 +122,13 @@ func _play_sound(sound):
 	audio_player.stream = sound
 	audio_player.play()
 	
-func Open_Door():
-	if Door==true:
+func stop_character():
+	if Stop_enabled==true:
+		audio_player.stop()
+		animated_sprite_2d.play("idle_with_arma")
 		set_physics_process(false)
+	else:
+		set_physics_process(true)
 
 func _on_timer_disparo_permitido():
 	# Esta función es llamada cuando el temporizador finaliza
