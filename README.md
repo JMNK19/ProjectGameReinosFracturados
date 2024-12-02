@@ -11,4 +11,5 @@
                 transition: all 0.3s ease-in-out;">
     Click para Jugar
   </button>
+  <span style="margin-left: 10px; font-size: 18px; color: #333; font-weight: bold;">Enlace jugable</span>
 </a>
