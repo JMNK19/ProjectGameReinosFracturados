@@ -1,0 +1,219 @@
+[gd_scene load_steps=13 format=3 uid="uid://djqoaclmktvup"]
+
+[ext_resource type="Script" path="res://scenes/levels/level_3_dimension_infinita/dimension_infinita.gd" id="1_1e7dk"]
+[ext_resource type="Texture2D" uid="uid://cwghkydnwutky" path="res://assets/cientifico/cientifico_idle.png" id="1_lg331"]
+[ext_resource type="Texture2D" uid="uid://cgugen7pexf6y" path="res://assets/cientifico/cientifico_arma/Pistola laser.png" id="2_nmbe3"]
+[ext_resource type="FontFile" uid="uid://dregmkvncw55k" path="res://assets/fonts/press_Sstart_2p/PressStart2P-Regular.ttf" id="3_0xro6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o12cf"]
+atlas = ExtResource("1_lg331")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24ijo"]
+atlas = ExtResource("1_lg331")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjv4v"]
+atlas = ExtResource("1_lg331")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0csk"]
+atlas = ExtResource("1_lg331")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_unuu7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o12cf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24ijo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjv4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0csk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_hf11b"]
+resource_name = "vacio"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 3
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.5708, 3.14159, 4.71239, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PistolaLaser:rotation")
+tracks/1/interp = 3
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -1.5708, -3.14159, -4.71239, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.7, 1, 1.3, 1.6, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(3, 3), Vector2(2, 2), Vector2(3, 3), Vector2(2, 2), Vector2(3, 3), Vector2(2, 2), Vector2(3, 3), Vector2(2, 2), Vector2(3, 3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label2:theme_override_colors/font_color")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.768627, 0.701961, 0, 1), Color(0.278431, 0.701961, 0, 1), Color(0.188235, 0.101961, 0.811765, 1), Color(0.643137, 0.211765, 0.619608, 1), Color(0.768627, 0.0117647, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xm4d0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PistolaLaser:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.785398]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label2:theme_override_colors/font_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.768627, 0.701961, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iyv4j"]
+_data = {
+"RESET": SubResource("Animation_xm4d0"),
+"vacio": SubResource("Animation_hf11b")
+}
+
+[node name="DimensionInfinita" type="Node2D"]
+script = ExtResource("1_1e7dk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(575, 283.918)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_unuu7")
+autoplay = "default"
+frame_progress = 0.296861
+
+[node name="PistolaLaser" type="Sprite2D" parent="."]
+position = Vector2(497, 273.918)
+rotation = 0.785398
+scale = Vector2(3, 3)
+texture = ExtResource("2_nmbe3")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 170.0
+offset_top = 365.918
+offset_right = 995.0
+offset_bottom = 390.918
+theme_override_fonts/font = ExtResource("3_0xro6")
+theme_override_font_sizes/font_size = 25
+text = "Ingresaste a un vacio dimensional"
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.743931)
+offset_left = 271.0
+offset_top = 467.0
+offset_right = 904.0
+offset_bottom = 492.0
+theme_override_colors/font_color = Color(0.768627, 0.701961, 0, 1)
+theme_override_fonts/font = ExtResource("3_0xro6")
+theme_override_font_sizes/font_size = 25
+text = "Gracias por jugar la demo"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_iyv4j")
+}
+autoplay = "vacio"

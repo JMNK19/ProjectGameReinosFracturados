@@ -28,7 +28,7 @@ func _physics_process(delta):
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("player"):
-		print("ingreso")
+		#print("ingreso")
 		player_body=body
 		body.Stop_enabled=true
 		conversacion.queue_free()

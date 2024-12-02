@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://b6mam6pw7e4wy"
+path="res://.godot/imported/dialogue_dimensionCristales.dialogue-d39452a0919574c53e7e52510ce279eb.tres"
+
+[deps]
+
+source_file="res://scenes/dialogues/level_2/dialogue_dimensionCristales.dialogue"
+dest_files=["res://.godot/imported/dialogue_dimensionCristales.dialogue-d39452a0919574c53e7e52510ce279eb.tres"]
+
+[params]
+
+defaults=true

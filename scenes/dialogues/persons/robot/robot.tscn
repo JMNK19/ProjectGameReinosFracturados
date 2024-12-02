@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://dt4l88x2te6rg"]
+
+[ext_resource type="Texture2D" uid="uid://c8txon6xyxm3s" path="res://assets/enemy/enemy_1/Enemigo-C1.png" id="1_3h4h8"]
+[ext_resource type="Texture2D" uid="uid://djwh7a3sms72p" path="res://assets/enemy/enemy_1/Enemigo-C2.png" id="2_kqsga"]
+[ext_resource type="Texture2D" uid="uid://cnvwseukuhiue" path="res://assets/enemy/enemy_1/Enemigo-C3.png" id="3_0cc1c"]
+[ext_resource type="Texture2D" uid="uid://cuv342emqaoq4" path="res://assets/enemy/enemy_1/Enemigo-C4.png" id="4_3hbad"]
+[ext_resource type="Texture2D" uid="uid://bxdy6bo2tmots" path="res://assets/enemy/enemy_1/Enemigo-C5.png" id="5_b1dw5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tgnas"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3h4h8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kqsga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0cc1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3hbad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b1dw5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Robot" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(50, 95)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_tgnas")
+autoplay = "default"
+frame_progress = 0.57227

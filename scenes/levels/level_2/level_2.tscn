@@ -1,8 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://bj78lmi62eoh6"]
+[gd_scene load_steps=18 format=3 uid="uid://bj78lmi62eoh6"]
 
+[ext_resource type="Script" path="res://scenes/levels/level_2/level_2.gd" id="1_3nnmh"]
 [ext_resource type="Texture2D" uid="uid://ntiuliqkfchp" path="res://assets/backgrounds/level_2/Dimension-Cristal.png" id="1_fiftx"]
 [ext_resource type="Texture2D" uid="uid://b7vjkwq70mvt8" path="res://assets/tilesets/tile_suelo.png" id="2_77024"]
 [ext_resource type="Texture2D" uid="uid://q5j36bj77xsn" path="res://assets/tilesets/TileSet-Plataforms_Crystal.png" id="2_iq7r8"]
+[ext_resource type="Resource" uid="uid://b6mam6pw7e4wy" path="res://scenes/dialogues/level_2/dialogue_dimensionCristales.dialogue" id="2_qca8k"]
 [ext_resource type="PackedScene" uid="uid://cd7q7toq8bjmp" path="res://scenes/characters/main_character/main_character.tscn" id="3_k1hud"]
 [ext_resource type="PackedScene" uid="uid://dwq42tyra3v5o" path="res://scenes/enemy/enemigo_01.tscn" id="5_kd8fg"]
 [ext_resource type="PackedScene" uid="uid://8rbt5lmdrp0s" path="res://scenes/camera/camera.tscn" id="6_ptp0h"]
@@ -10,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dj2g7im2a3nd1" path="res://scenes/coleccionables/municion/municion.tscn" id="8_nf1m6"]
 [ext_resource type="PackedScene" uid="uid://fy3ym335lqgf" path="res://scenes/portal/mini_portal/mini_Portal.tscn" id="9_qrang"]
 [ext_resource type="PackedScene" uid="uid://drjivkaeqdawp" path="res://scenes/cristales/cristal.tscn" id="10_xl1hr"]
+[ext_resource type="AudioStream" uid="uid://dq07gbalbvmld" path="res://assets/sounds/level2.mp3" id="11_c04vi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fx6df"]
 texture = ExtResource("2_iq7r8")
@@ -552,7 +555,12 @@ navigation_layer_0/layers = 1
 sources/3 = SubResource("TileSetAtlasSource_e38mu")
 sources/0 = SubResource("TileSetAtlasSource_fx6df")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wkfq"]
+size = Vector2(76, 73)
+
 [node name="Level2" type="Node2D" groups=["nivel"]]
+script = ExtResource("1_3nnmh")
+dialogue_resource = ExtResource("2_qca8k")
 
 [node name="Dimension-cristal" type="Sprite2D" parent="."]
 position = Vector2(536, 312)
@@ -570,7 +578,7 @@ layer_1/tile_data = PackedInt32Array()
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_k1hud")]
 z_index = 1
-position = Vector2(86.6853, 525.367)
+position = Vector2(-12, 532)
 
 [node name="Robot" parent="." instance=ExtResource("5_kd8fg")]
 position = Vector2(298.211, 605.614)
@@ -610,6 +618,19 @@ position = Vector2(1083, 430)
 
 [node name="MiniPortal" parent="." instance=ExtResource("9_qrang")]
 position = Vector2(1089, 255)
+path_nivel = "res://scenes/levels/level_3_dimension_infinita/dimension_infinita.tscn"
 
 [node name="Cristal" parent="." instance=ExtResource("10_xl1hr")]
 position = Vector2(541, 187)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_c04vi")
+autoplay = true
+
+[node name="Area2DContexto" type="Area2D" parent="."]
+
+[node name="CollisionShape2DContexto" type="CollisionShape2D" parent="Area2DContexto"]
+position = Vector2(52, 545)
+shape = SubResource("RectangleShape2D_7wkfq")
+
+[connection signal="body_entered" from="Area2DContexto" to="." method="_on_area_2d_contexto_body_entered"]
