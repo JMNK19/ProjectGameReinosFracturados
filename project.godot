@@ -13,7 +13,7 @@ config_version=5
 config/name="GameReinosFracturados"
 run/main_scene="res://scenes/ui/splash/splash.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://logoReinosFracturados.svg"
 
 [autoload]
 

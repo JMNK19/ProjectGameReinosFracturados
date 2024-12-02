@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c8htfidyxtt8v"]
 
 [ext_resource type="Script" path="res://scenes/transitions/scene_transition.gd" id="1_27m8u"]
-[ext_resource type="FontFile" uid="uid://dregmkvncw55k" path="res://assets/fonts/press_Sstart_2p/PressStart2P-Regular.ttf" id="2_0very"]
+[ext_resource type="FontFile" uid="uid://dregmkvncw55k" path="res://assets/Font_Item_Inventario/press_Sstart_2p/PressStart2P-Regular.ttf" id="2_0very"]
 [ext_resource type="Texture2D" uid="uid://cksxg3rp03bba" path="res://assets/cientifico/cientificidocamina64x64-Sheet.png" id="3_yth8n"]
 
 [sub_resource type="Animation" id="Animation_t2gy3"]

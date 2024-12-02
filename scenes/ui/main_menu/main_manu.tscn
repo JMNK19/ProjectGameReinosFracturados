@@ -411,8 +411,7 @@ text = "Creado por:
 
 - Jose Carlos Pacheco Collantes
 
-- Jean Pierre Alejandro Medrano 
-  Rodriguez"
+- Jean Pierre Medrano Rodriguez"
 
 [connection signal="pressed" from="TextureRect/Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="TextureRect/Instrucciones" to="." method="_on_instrucciones_pressed"]
