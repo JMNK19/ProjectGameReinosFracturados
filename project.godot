@@ -68,8 +68,7 @@ disparar={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://scenes/dialogues/level_1/level1_asistente_inicio.dialogue", "res://scenes/dialogues/level_1/level1_asistente_portal_pistola.dialogue")
-
+locale/translations_pot_files=PackedStringArray("res://scenes/dialogues/level_1/level1_asistente_inicio.dialogue", "res://scenes/dialogues/level_1/level1_asistente_portal_pistola.dialogue", "res://scenes/dialogues/prueba.dialogue")
 
 [rendering]
 
